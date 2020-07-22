@@ -1,19 +1,19 @@
-# Contributing to CoCreate-room
+# Contributing to CoCreate-vdom
 
-This project is work of [many contributors](https://github.com/CoCreate-app/CoCreate-room/graphs/contributors).
-You're encouraged to submit [pull requests](https://github.com/CoCreate-app/CoCreate-room/pulls),
-[propose features and discuss issues](https://github.com/CoCreate-app/CoCreate-room/issues).
+This project is work of [many contributors](https://github.com/CoCreate-app/CoCreate-vdom/graphs/contributors).
+You're encouraged to submit [pull requests](https://github.com/CoCreate-app/CoCreate-vdom/pulls),
+[propose features and discuss issues](https://github.com/CoCreate-app/CoCreate-vdom/issues).
 
 In the examples below, substitute your Github username for `contributor` in URLs.
 
 ## Fork the Project
 
-Fork the [project on Github](https://github.com/CoCreate-app/CoCreate-room) and check out your copy.
+Fork the [project on Github](https://github.com/CoCreate-app/CoCreate-vdom) and check out your copy.
 
 ```
-git clone https://github.com/contributor/CoCreate-room.git
-cd CoCreate-room
-git remote add upstream https://github.com/CoCreate-app/CoCreate-room.git
+git clone https://github.com/contributor/CoCreate-vdom.git
+cd CoCreate-vdom
+git remote add upstream https://github.com/CoCreate-app/CoCreate-vdom.git
 ```
 
 ## Create a Topic Branch
@@ -70,7 +70,7 @@ git push origin my-feature-branch
 
 ## Make a Pull Request
 
-Go to [https://github.com/CoCreate-app/CoCreate-room](https://github.com/CoCreate-app/CoCreate-room) and select your feature branch.
+Go to [https://github.com/CoCreate-app/CoCreate-vdom](https://github.com/CoCreate-app/CoCreate-vdom) and select your feature branch.
 Click the 'Pull Request' button and fill out the form. Pull requests are usually reviewed within a few days.
 
 ## Rebase
@@ -88,7 +88,7 @@ git push origin my-feature-branch -f
 Update the [CHANGELOG](CHANGELOG.md) with the pull request number. A typical entry looks as follows.
 
 ```
-* [#123](https://github.com/CoCreate-app/CoCreate-room/pull/123): Reticulated splines - [@contributor](https://github.com/contributor).
+* [#123](https://github.com/CoCreate-app/CoCreate-vdom/pull/123): Reticulated splines - [@contributor](https://github.com/contributor).
 ```
 
 Amend your previous commit and force push the changes.
