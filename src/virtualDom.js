@@ -86,8 +86,10 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
     let treeItem = document.createElement('div');
 
     let metadata = document.createElement('div');
-    metadata.setAttribute('data-coc-droppable', 'false')
-    metadata.setAttribute('data-coc-draggable', 'false')
+    metadata.setAttribute('data-coc-exclude', 'true')
+    metadata.classList.add('metadata')
+
+
     let realDomId = element.getAttribute('data-element_id');
     treeItem.setAttribute('data-element_id', realDomId);
     let atts = Array.from(element.attributes).filter(att => att.name.startsWith('data-coc-draggable') || att.name.startsWith('data-coc-droppable'))

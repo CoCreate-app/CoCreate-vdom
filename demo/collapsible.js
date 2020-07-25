@@ -13,19 +13,15 @@
 
     document.addEventListener("click", function(e) {
       let parent;
-      // if (e.target.classList.contains('collapsible'))
-      //   parent = e.target.parentElement;
+
 
       if (e.target.parentElement.classList.contains('collapsible'))
-        parent = e.target.parentElement.parentElement;
+        parent = e.target.parentElement.parentElement.parentElement;
 
-
-      // if (e.target.classList.contains('parent') || e.target.classList.contains('vdom-item'))
-      // parent = e.target;
 
       let children = parent.querySelectorAll('.parent > .vdom-item');
 
-      let arrow = parent.querySelector('.parent > span > i');
+      let arrow = parent.querySelector('.parent > .metadata > span > i');
 
       if (arrow.classList.contains('fa-caret-right')) {
 
