@@ -1,5 +1,6 @@
 /*global DOMParser*/
 import virtualDom from '../src/virtualDom';
+console.log('vdom is loading')
 
 function UUID(length = 10) {
     var result = '';
@@ -16,9 +17,14 @@ function UUID(length = 10) {
     return result;
 }
 
+
+
 window.initvdom = () => {
+    console.log('vdom is initiationg')
 
     console.log('runnnnnnnnnnning');
+
+
     let vdomTargets = document.querySelectorAll('[data-vdom_target]')
 
     for (let i = 0, len = vdomTargets.length; i < len; i++) {
@@ -43,8 +49,14 @@ window.initvdom = () => {
 
         }
     }
+    console.log('vdom finish initiating')
 };
 
 let canvasWindow = document.getElementById('canvas').contentWindow;
-canvasWindow.addEventListener('load', window.initvdom);
+canvasWindow.addEventListener('load', () => {
+
+    setTimeout(window.initvdom, 200);
+
+});
+console.log('vdom finished loading')
 console.log('ccccccccccccanvas', canvas)
