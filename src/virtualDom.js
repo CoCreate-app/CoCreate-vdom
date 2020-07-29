@@ -28,9 +28,7 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
   Object.assign(this.options, { indentBase: 10, indentSum: 15, exclude: ['SCRIPT'] });
 
 
-  this.render = function(elList, level, appendDom) {
-    let isAppended;
-
+  this.render = function(elList, level = 0, appendDom) {
 
     for (let el of elList) {
       if (this.options.exclude.includes(el.tagName))
@@ -38,34 +36,10 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
 
 
 
-
-
-      let displayName = el.getAttribute('data-CoC-name');
       let virtualEl = this.createVirtualElement({
-        name: (displayName ? displayName : el.tagName),
-        isParent: el.children.length,
         element: el,
       })
 
-
-      // virtualEl.addEventListener('mouseover', (e) => {
-      //   document.send_client((cdocument, cwindow) => {
-      //     let { hoverBoxMarker, tagNameTooltip } = cdocument.client_object;
-      //     hoverBoxMarker.draw(el);
-      //     tagNameTooltip.draw(el);
-      //   })
-      // })
-
-      // virtualEl.addEventListener('mouseLeave', (e) => {
-      //   hoverBoxMarker.hide(el);
-      //   tagNameTooltip.hide(el);
-      // })
-
-
-
-      virtualEl.classList.add('vdom-item');
-      if (el.children.length)
-        virtualEl.classList.add('parent');
 
       appendDom.append(virtualEl);
 
@@ -77,13 +51,52 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
 
     }
 
+  }
+
+
+  this.renderNew = function(elList, level = 0, appendDom) {
+
+
+    let virtualEl
+    for (let el of elList) {
+      if (this.options.exclude.includes(el.tagName))
+        continue;
+
+
+
+      virtualEl = this.createVirtualElement({
+        element: el,
+      })
+
+
+
+      if (el.children.length) {
+        // virtualEl.classList.add('collapsible')
+        this.renderNew(el.children, level + 1, virtualEl)
+      }
+
+      if (appendDom)
+        appendDom.append(virtualEl);
+    }
+    return virtualEl;
 
   }
 
 
-  this.createVirtualElement = function({ name, isParent, options, element }) {
+
+  this.createVirtualElement = function({ options, element }) {
 
     let treeItem = document.createElement('div');
+
+
+    let displayName = element.getAttribute('data-CoC-name');
+    let name = (displayName ? displayName : element.tagName);
+
+    let isParent = element.children.length;
+
+    treeItem.classList.add('vdom-item');
+    if (element.children.length)
+      treeItem.classList.add('parent');
 
     let metadata = document.createElement('div');
     metadata.setAttribute('data-coc-exclude', 'true')
@@ -96,11 +109,6 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
     atts.forEach(att => {
       treeItem.setAttribute(att.name, att.value);
     })
-
-
-
-
-
 
 
     let text = document.createElement('span');

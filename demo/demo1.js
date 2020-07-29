@@ -41,6 +41,7 @@ window.initvdom = () => {
                 virtualDom: vdomTargets[i],
                 document: iframe.contentDocument
             });
+            window.vdomObject = myVirtualDom;
             // domEditor({ target: iframeHtml.querySelectorAll('*'), idGenerator: UUID })
             // domEditor({ target: vdomTargets[i].querySelectorAll('*'), idGenerator: UUID })
             // })
