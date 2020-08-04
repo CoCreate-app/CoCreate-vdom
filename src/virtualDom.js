@@ -1,26 +1,3 @@
-/**
- * styling classes:
- * on hide element, the row get .layer-hidden
- **/
-import collapsible from './collapsible'
-import { droppable, draggable, name } from '../../globalFiles/variables'
-import ondrop from './ondrop';
-
-function UUID(length = 10) {
-  var result = '';
-  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-
-  var charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-
-  var d = new Date().toTimeString();
-  var random = d.replace(/[\W_]+/g, "").substr(0, 6);
-  result += random;
-  return result;
-}
-
 export default function virtualDom({ realDom, virtualDom, document, options }) {
 
   // set options to this.options and set defualts
