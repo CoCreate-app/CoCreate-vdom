@@ -11,7 +11,7 @@ module.exports = {
   // Path to your entry point. From this file Webpack will begin his work
   entry: {
     'CoCreate-vdom': './src/virtualDom.js',
-    'demo1': './demo/demo1.js',
+    // 'demo1': './demo/demo1.js',
   },
 
   // Path and filename of your result bundle.
