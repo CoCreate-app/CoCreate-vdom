@@ -77,7 +77,7 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
 
     let metadata = document.createElement('div');
     metadata.setAttribute('data-coc-exclude', 'true')
-    metadata.classList.add('metadata')
+    // metadata.classList.add('metadata')
 
 
     let realDomId = element.getAttribute('data-element_id');
