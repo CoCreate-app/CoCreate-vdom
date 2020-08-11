@@ -1,26 +1,3 @@
-/**
- * styling classes:
- * on hide element, the row get .layer-hidden
- **/
-import collapsible from './collapsible'
-import { droppable, draggable, name } from '../../globalFiles/variables'
-import ondrop from './ondrop';
-
-function UUID(length = 10) {
-  var result = '';
-  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-
-  var charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-
-  var d = new Date().toTimeString();
-  var random = d.replace(/[\W_]+/g, "").substr(0, 6);
-  result += random;
-  return result;
-}
-
 export default function virtualDom({ realDom, virtualDom, document, options }) {
 
   // set options to this.options and set defualts
@@ -28,9 +5,7 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
   Object.assign(this.options, { indentBase: 10, indentSum: 15, exclude: ['SCRIPT'] });
 
 
-  this.render = function(elList, level, appendDom) {
-    let isAppended;
-
+  this.render = function(elList, level = 0, appendDom) {
 
     for (let el of elList) {
       if (this.options.exclude.includes(el.tagName))
@@ -38,34 +13,10 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
 
 
 
-
-
-      let displayName = el.getAttribute('data-CoC-name');
       let virtualEl = this.createVirtualElement({
-        name: (displayName ? displayName : el.tagName),
-        isParent: el.children.length,
         element: el,
       })
 
-
-      // virtualEl.addEventListener('mouseover', (e) => {
-      //   document.send_client((cdocument, cwindow) => {
-      //     let { hoverBoxMarker, tagNameTooltip } = cdocument.client_object;
-      //     hoverBoxMarker.draw(el);
-      //     tagNameTooltip.draw(el);
-      //   })
-      // })
-
-      // virtualEl.addEventListener('mouseLeave', (e) => {
-      //   hoverBoxMarker.hide(el);
-      //   tagNameTooltip.hide(el);
-      // })
-
-
-
-      virtualEl.classList.add('vdom-item');
-      if (el.children.length)
-        virtualEl.classList.add('parent');
 
       appendDom.append(virtualEl);
 
@@ -77,28 +28,64 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
 
     }
 
+  }
+
+
+  this.renderNew = function(elList, level = 0, appendDom) {
+
+
+    let virtualEl
+    for (let el of elList) {
+      if (this.options.exclude.includes(el.tagName))
+        continue;
+
+
+
+      virtualEl = this.createVirtualElement({
+        element: el,
+      })
+
+
+
+      if (el.children.length) {
+        // virtualEl.classList.add('collapsible')
+        this.renderNew(el.children, level + 1, virtualEl)
+      }
+
+      if (appendDom)
+        appendDom.append(virtualEl);
+    }
+    return virtualEl;
 
   }
 
 
-  this.createVirtualElement = function({ name, isParent, options, element }) {
+
+  this.createVirtualElement = function({ options, element }) {
 
     let treeItem = document.createElement('div');
 
+
+    let displayName = element.getAttribute('data-CoC-name');
+    let name = (displayName ? displayName : element.tagName);
+
+    let isParent = element.children.length;
+
+    treeItem.classList.add('vdom-item');
+    if (element.children.length)
+      treeItem.classList.add('parent');
+
     let metadata = document.createElement('div');
-    metadata.setAttribute('data-coc-droppable', 'false')
-    metadata.setAttribute('data-coc-draggable', 'false')
+    metadata.setAttribute('data-coc-exclude', 'true')
+    // metadata.classList.add('metadata')
+
+
     let realDomId = element.getAttribute('data-element_id');
     treeItem.setAttribute('data-element_id', realDomId);
     let atts = Array.from(element.attributes).filter(att => att.name.startsWith('data-coc-draggable') || att.name.startsWith('data-coc-droppable'))
     atts.forEach(att => {
       treeItem.setAttribute(att.name, att.value);
     })
-
-
-
-
-
 
 
     let text = document.createElement('span');
@@ -162,3 +149,67 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
 
 
 }
+
+
+
+/*global DOMParser*/
+
+console.log('vdom is loading')
+
+function UUID(length = 10) {
+  var result = '';
+  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+
+  var d = new Date().toTimeString();
+  var random = d.replace(/[\W_]+/g, "").substr(0, 6);
+  result += random;
+  return result;
+}
+
+
+
+window.initvdom = () => {
+  console.log('vdom is initiationg')
+
+
+
+  let vdomTargets = document.querySelectorAll('[data-vdom_target]')
+
+  for (let i = 0, len = vdomTargets.length; i < len; i++) {
+    let vdomTargetName = vdomTargets[i].getAttribute('data-vdom_target')
+
+    if (vdomTargetName) {
+
+      let iframe = document.querySelector('[data-vdom_id=' + vdomTargetName + ']')
+      // iframe.contentWindow.addEventListener('load', () => {
+      let iframeHtml = iframe.contentDocument.body.parentNode;
+
+      let myVirtualDom = new virtualDom({
+        realDom: iframeHtml,
+        virtualDom: vdomTargets[i],
+        document: iframe.contentDocument
+      });
+      window.vdomObject = myVirtualDom;
+      // domEditor({ target: iframeHtml.querySelectorAll('*'), idGenerator: UUID })
+      // domEditor({ target: vdomTargets[i].querySelectorAll('*'), idGenerator: UUID })
+      // })
+
+
+
+    }
+  }
+  console.log('vdom finish initiating')
+};
+
+let canvasWindow = document.getElementById('canvas').contentWindow;
+canvasWindow.addEventListener('load', () => {
+
+  setTimeout(window.initvdom, 200);
+
+});
+console.log('vdom finished loading')

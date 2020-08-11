@@ -1,12 +1,21 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CoCreate-vdom.js</title>
-  <script src="https://kit.fontawesome.com/99ba925095.js"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="icon" href="https://cdn.cocreate.app/favicon.ico" type="image/ico" sizes="16x16">
+  <title>CoCreate-vdom | CoCreate</title>
+  <meta name="description" content="Utility first css framework, design faster and improve on your css by using native inline styles as classes. No learning curve, use what you already know" />
+  <meta name="keywords" content="helper classes, utility classes, css framework, css library, inline style classes" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- CoCreate CSS -->
+  <!--<link rel="stylesheet" href="https://server.cocreate.app/css/CoCreate.min.css" type="text/css" />-->
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous" />
 
   <style>
     /*virtual dom sepcific*/
@@ -143,7 +152,7 @@
       flex-direction: column;
 
     }
-    
+
     /*virtual dom sepcific*/
 
     /* dnd specic */
@@ -191,14 +200,45 @@
 <body>
 
   <div id="container">
-
+    <!--clonables -->
+    <ul id="dragitemslistcontainer">
+      <li id="header" data-CoC-cloneable="true" data-insert-html='<h1 droppable="true" class="CoC-droppable">This is a Header</h1>"><i class="fa fa-header'>
+        </i>
+        <p>Header</p>
+      </li>
+      <li id="span" data-CoC-cloneable="true" data-insert-html='<span droppable="true" class="CoC-droppable">This is an Span</span>"><i class="fa fa-header'>
+        </i>
+        <p>Span</p>
+      </li>
+      <li id="li" data-CoC-cloneable="true" data-insert-html='<li droppable="true" class="CoC-droppable">this is a Li</li>"><i class="fa fa-header'>
+        </i>
+        <p>Li</p>
+      </li>
+      <li id="chart-image" data-CoC-cloneable="true" data-insert-html="<img droppable='true' class='CoC-droppable' src='http://blogs-images.forbes.com/anthonykosner/files/2014/06/us-browser-share-adobe-index-2014.jpg'>">
+        <i class="fa fa-bar-chart"></i>
+        <p>Chart Image</p>
+      </li>
+      <li id="login-from" data-CoC-cloneable="true" data-insert-html='<div droppable="true" class="CoC-droppable" class="well login-box"> <form action=""> <legend>Login</legend> <div class="form-group"> <label for="username-email">E-mail or Username</label> <input value="" id="username-email" placeholder="E-mail or Username" type="text" class="form-control"/> </div><div class="form-group"> <label for="password">Password</label> <input id="password" value="" placeholder="Password" type="text" class="form-control"/> </div><div class="form-group text-center"> <button class="btn btn-danger btn-cancel-action">Cancel</button> <input type="submit" class="btn btn-success btn-login-submit" value="Login"/> </div></form> </div>'>
+        <i class="fa fa-sign-in"></i>
+        <p>Login Form</p>
+      </li>
+      <li id="login-from" data-CoC-cloneable="true">
+        <i class="fa fa-sign-in"></i>
+        <p>it will be cloned and droped as itself because it doesn't have data-insert-html </p>
+      </li>
+    </ul>
+    <!--clonables -->
     <!--<iframe data-vdom_id="test" data-collection="modules" data-document_id="5eefe30952c6e94c75fb5e3f" name="html" src="demo1frame.html" frameborder="0" width="100%" height="100%"></iframe>-->
-    <iframe data-vdom_id="test" id="canvas" src="./demo1frame.1.html" frameborder="0" width="100%" height="100%"></iframe>
+    <iframe data-vdom_id="test" id="canvas" data-document_id="5eefe30952c6e94c75fb5e3f" src="./iframe.html" frameborder="0" width="100%" height="1000px"></iframe>
 
     <!--<iframe id="canvas" data-vdom_id="test" src="./iframe.html"></iframe>-->
 
 
+<<<<<<< HEAD:demo/demo1.html
     <div style="width: 240px;" data-vdom_target="test" data-socket_room="" class="padding-top:50px" data-group_name="test"></div>
+=======
+    <div style="width: 500px;" data-vdom_target="test" data-socket_room="" class="padding-top-50px" data-group_name="test"></div>
+>>>>>>> 4e64b9abbbf143fa4f4f20162269675953d97795:demo/vdom.html
 
   </div>
 
@@ -209,11 +249,14 @@
       organization_Id: '5de0387b12e200ea63204d6c'
     }
   </script>
-  <script defer src="https://server.cocreate.app/js/CoCreate.min.js"></script>
-  <!--<script defer src="../../CoCreate-domEditor.js/src/domEditor.js"></script>-->
-  <script defer src="../../CoCreate-dnd.js/dist/dnd.js"></script>
-  <script defer src="../../CoCreate-vdom.js/dist/demo1.js"></script>
-  <script defer src="./collapsible.js"></script>
+  <script defer src="../../globalFiles/CoCreate.min.js"></script>
+  <script defer src="../../CoCreate-domEditor/src/domEditor.js"></script>
+  <script defer src="../../CoCreate-domEditor/src/element-config.js"></script>
+  <script defer src="../../CoCreate-dnd/dist/dnd.js"></script>
+  <script defer src="../../CoCreate-vdom/dist/CoCreate-vdom.js"></script>
+  <script defer src="../../CoCreate-collapsible/src/collapsible.js"></script>
+  <script defer src="../../CoCreate-domEditorPanel/src/domEditorPanel.js"></script>
+  <script defer src="./vdom.js"></script>
 
 
 
