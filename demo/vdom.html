@@ -13,185 +13,30 @@
 
   <!-- CoCreate CSS -->
   <!--<link rel="stylesheet" href="https://server.cocreate.app/css/CoCreate.min.css" type="text/css" />-->
+  <link rel="stylesheet" href="../../CoCreate-vdom/src/CoCreate-vdom.css" type="text/css" />
+  <link rel="stylesheet" href="../../CoCreate-dnd/src/CoCreate-dnd.css" type="text/css" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous" />
 
   <style>
-    /*virtual dom sepcific*/
-
-    /*.sortable-item {*/
-
-    /*  background-color: white;*/
-
-    /*  border-bottom: 1px solid gray;*/
-
-    /*  display: flex;*/
-
-    /*  flex-direction: row;*/
-
-    /*  align-items: center;*/
-
-    /*  justify-content: space-between;*/
-
-    /*  padding: 2px 10px;*/
-
-    /*  cursor: pointer;*/
-
-    /*}*/
-
-    /*.sortable-item .fa-arrows-alt {*/
-
-    /*  cursor: all-scroll;*/
-
-    /*}*/
-
-    /*.sortable-item.layer-hidden {*/
-
-    /*  opacity: .5;*/
-
-    /*}*/
-
-    .vdom-item {
-      background-color: white;
-      /*outline: 1px dashed gray;*/
-      border-top: 1px solid gray;
-      /*display: flex;*/
-      /*flex-direction: row;*/
-      /*align - items: center;*/
-      /*justify-content: space-between;*/
-      /*padding: 2px 10px;*/
-      cursor: pointer;
+    #container {
+      display: flex;
+      height: 100%;
     }
 
-    .vdom-item .fa-arrows-alt {
-      cursor: all-scroll;
-      float: right;
-    }
-
-    .vdom-item i {
-      padding: 5px;
-    }
-
-    .vdom-item.layer-hidden {
-      opacity: .5;
-    }
-
-    .parent.vdom-item .vdom-item span {
-      padding-left: 20px;
-    }
-
-    .parent .parent.vdom-item .vdom-item span {
-      padding-left: 30px;
-    }
-
-    .parent .parent .parent.vdom-item .vdom-item span {
-      padding-left: 40px;
-    }
-
-    .parent .parent .parent .parent.vdom-item .vdom-item span {
-      padding-left: 50px;
-    }
-
-    .parent .parent .parent .parent .parent.vdom-item .vdom-item span {
-      padding-left: 60px;
-    }
-
-    .parent.vdom-item span {
-      padding-left: 10px;
-    }
-
-    .parent .parent.vdom-item span {
-      padding-left: 10px;
-    }
-
-    .parent .parent .parent.vdom-item span {
-      padding-left: 20px;
-    }
-
-    .parent .parent .parent .parent.vdom-item span {
-      padding-left: 30px;
-    }
-
-    .parent .parent .parent .parent .parent.vdom-item span {
-      padding-left: 40px;
-    }
-
-    span i {
-      padding-right: 5px;
-    }
-
-    .parent>span {
-      /* the width of arrow */
-      margin-left: -6px;
-    }
+    /* this is already apart of COCreate.min.css but we only remove and add one hidden in an element */
 
     .hidden.hidden {
       display: none;
     }
 
-    /* by frank pagan: to make metadata alwyas appear the first no matter the order*/
-
-    /*.parent.vdom-item {*/
-
-    /*  display: flex;*/
-
-    /*  flex-direction: column;*/
-
-    /*}*/
-
-    /*.parent .vdom-item {*/
-
-    /*  order: 2;*/
-
-    /*}*/
-
-    .vdom-item {
-      order: 2;
-      display: flex;
-      flex-direction: column;
-
+    .vdom-item div .collapse {
+      background: red;
     }
 
-    /*virtual dom sepcific*/
-
-    /* dnd specic */
-
-    [data-CoC-cloneable],
-    [data-CoC-draggable] {
-      cursor: pointer;
-    }
-
-    [data-CoC-cloneable],
-    [data-CoC-draggable],
-    [data-CoC-droppable],
-    [data-CoC-hoverable] {
-      outline: 1px dashed gray;
-    }
-
-
-
-    *[CoC-hovered=true] {
-      outline: 2px solid blue
-    }
-
-    /* must be defined after CoC-hovered because of css specificity to show selected with higher priority */
-
-    *[CoC-selected=true] {
-      outline: 3px solid green;
-    }
-
-    *[CoC-dragging=true] {
-      outline: 3px solid red;
-    }
-
-
-    /* dnd specic */
-
-    #container {
-      display: flex;
-
-      height: 100%;
+    .vdom-item+div .collapse>.vdom-item {
+      display: none;
     }
   </style>
 
@@ -252,7 +97,6 @@
   <script defer src="../../CoCreate-vdom/dist/CoCreate-vdom.js"></script>
   <script defer src="../../CoCreate-collapsible/src/collapsible.js"></script>
   <script defer src="../../CoCreate-domEditorPanel/src/domEditorPanel.js"></script>
-  <script defer src="./vdom.js"></script>
 
 
 
