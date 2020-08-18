@@ -38,6 +38,42 @@
     .vdom-item+div .collapse>.vdom-item {
       display: none;
     }
+    
+   .vdom-item> .vdom-item{
+     display:block;
+     height:auto;
+  -moz-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+  animation: showAnimation 0.5s ease-in-out;
+  -moz-animation: showAnimation 0.5s ease-in-out;
+  -webkit-animation: showAnimation 0.5s ease-in-out;
+  -moz-transition: max-height 0.5s ease-in-out;
+  -o-transition: max-height 0.5s ease-in-out;
+  -webkit-transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
+   }
+   .vdom-item.collapse> .vdom-item{
+     display:none;
+     height:0;
+  -moz-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -moz-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -moz-transition: max-height 0.6s ease-out;
+  -o-transition: max-height 0.6s ease-out;
+  -webkit-transition: max-height 0.6s ease-out;
+  transition: max-height 0.6s ease-out;
+  animation: hideAnimation 0.4s ease-out;
+  -moz-animation: hideAnimation 0.4s ease-out;
+  -webkit-animation: hideAnimation 0.4s ease-out;
+  
+   }
   </style>
 
 </head>
@@ -95,9 +131,9 @@
   <!--<script defer src="../../CoCreate-domEditor/src/element-config.js"></script>-->
   <script defer src="../../CoCreate-dnd/dist/dnd.js"></script>
   <script defer src="../../CoCreate-vdom/dist/CoCreate-vdom.js"></script>
-  <script defer src="../../CoCreate-collapsible/src/collapsible.js"></script>
+  <!--<script defer src="../../CoCreate-collapsible/src/collapsible.js"></script>-->
   <script defer src="../../CoCreate-domEditorPanel/src/domEditorPanel.js"></script>
-
+  <script defer src="../../CoCreate-toogle/src/CoCreate-toogle.js"></script>
 
 
 

@@ -76,6 +76,8 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
       treeItem.classList.add('parent');
 
     let metadata = document.createElement('div');
+
+    
     metadata.setAttribute('data-coc-exclude', 'true')
     // metadata.classList.add('metadata')
 
@@ -89,9 +91,10 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
 
 
     let text = document.createElement('span');
-    text.classList.add('collapsible')
-    text.innerHTML = name;
-    text.style.flex = '1';
+ 
+
+    let text2 = document.createElement('span');
+    text2.innerHTML = name;
 
 
     let lastDisplay;
@@ -114,17 +117,23 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
     })
     let arrow = this.createFAIcon({ name: 'fa-arrows-alt' })
 
-
     metadata.append(eye);
 
     if (isParent) {
 
       let down = this.createFAIcon({ name: 'fa-caret-down' })
       text.insertAdjacentElement('afterbegin', down)
+      
+      down.setAttribute('data-toggle','collapse');
+      down.setAttribute('data-toggle_closest', '.vdom-item');  
+      down.setAttribute('data-transform_to', 'fa fa-caret-right');  
+    
+
     }
 
 
     metadata.append(text);
+    metadata.append(text2);
     metadata.append(arrow);
     treeItem.append(metadata);
     return treeItem;
@@ -135,6 +144,7 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
     let icon = document.createElement('i');
     icon.classList.add('fa');
     icon.classList.add(name);
+
     if (event) {
       let eventType = Object.keys(event)[0];
       let func = event[eventType];
