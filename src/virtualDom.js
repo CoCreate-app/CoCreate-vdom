@@ -139,7 +139,6 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
     return treeItem;
   }
 
-
   this.createFAIcon = function({ name, event }) {
     let icon = document.createElement('i');
     icon.classList.add('fa');
