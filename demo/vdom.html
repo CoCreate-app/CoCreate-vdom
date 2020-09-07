@@ -7,117 +7,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="https://cdn.cocreate.app/favicon.ico" type="image/ico" sizes="16x16">
   <title>CoCreate-vdom | CoCreate</title>
-  <meta name="description" content="Utility first css framework, design faster and improve on your css by using native inline styles as classes. No learning curve, use what you already know" />
+  <meta name="description" content="Website and web app Builder framework using Cocreate Componets" />
   <meta name="keywords" content="helper classes, utility classes, css framework, css library, inline style classes" />
   <meta name="robots" content="index,follow" />
 
   <!-- CoCreate CSS -->
-  <!--<link rel="stylesheet" href="https://server.cocreate.app/css/CoCreate.min.css" type="text/css" />-->
-  <link rel="stylesheet" href="../../CoCreate-vdom/src/CoCreate-vdom.css" type="text/css" />
-  <link rel="stylesheet" href="../../CoCreate-dnd/src/CoCreate-dnd.css" type="text/css" />
+  <link rel="stylesheet" href="https://server.cocreate.app/css/CoCreate.min.css" type="text/css" />
+  <link rel="stylesheet" href="https://server.cocreate.app/CoCreate-components/CoCreate-vdom/src/CoCreate-vdom.css" type="text/css" />
+  <link rel="stylesheet" href="https://server.cocreate.app/CoCreate-components/CoCreate-dnd/src/CoCreate-dnd.css" type="text/css" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous" />
 
   <style>
-    #container {
-      display: flex;
-      height: 100%;
-    }
-
     /* this is already apart of COCreate.min.css but we only remove and add one hidden in an element */
-
-    .hidden.hidden {
-      display: none;
-    }
-
-    .vdom-item div .collapse {
-      background: red;
-    }
-
     .vdom-item+div .collapse>.vdom-item {
       display: none;
     }
     
-   .vdom-item> .vdom-item{
-     display:block;
-     height:auto;
-  -moz-transform: scaleY(1);
-  -ms-transform: scaleY(1);
-  -webkit-transform: scaleY(1);
-  transform: scaleY(1);
-  animation: showAnimation 0.5s ease-in-out;
-  -moz-animation: showAnimation 0.5s ease-in-out;
-  -webkit-animation: showAnimation 0.5s ease-in-out;
-  -moz-transition: max-height 0.5s ease-in-out;
-  -o-transition: max-height 0.5s ease-in-out;
-  -webkit-transition: max-height 0.5s ease-in-out;
-  transition: max-height 0.5s ease-in-out;
-   }
-   .vdom-item.collapse> .vdom-item{
-     display:none;
-     height:0;
-  -moz-transform: scaleY(0);
-  -ms-transform: scaleY(0);
-  -webkit-transform: scaleY(0);
-  transform: scaleY(0);
-  -moz-transform-origin: 50% 0%;
-  -ms-transform-origin: 50% 0%;
-  -webkit-transform-origin: 50% 0%;
-  transform-origin: 50% 0%;
-  -moz-transition: max-height 0.6s ease-out;
-  -o-transition: max-height 0.6s ease-out;
-  -webkit-transition: max-height 0.6s ease-out;
-  transition: max-height 0.6s ease-out;
-  animation: hideAnimation 0.4s ease-out;
-  -moz-animation: hideAnimation 0.4s ease-out;
-  -webkit-animation: hideAnimation 0.4s ease-out;
-  
-   }
   </style>
 
 </head>
 
 <body>
+  <!-- Navbar  -->
+  <div class="nav display:flex align-items:center bg:light-gray" data-main_content_id="canvas" data-scroll_effect="hide-nav" data-scroll_up="1" data-scroll_down="1">
 
-  <div id="container">
-    <!--clonables -->
-    <ul id="dragitemslistcontainer">
-      <li id="header" data-CoC-cloneable="true" data-insert-html='<h1 droppable="true" class="CoC-droppable">This is a Header</h1>"><i class="fa fa-header'>
-        </i>
-        <p>Header</p>
-      </li>
-      <li id="span" data-CoC-cloneable="true" data-insert-html='<span droppable="true" class="CoC-droppable">This is an Span</span>"><i class="fa fa-header'>
-        </i>
-        <p>Span</p>
-      </li>
-      <li id="li" data-CoC-cloneable="true" data-insert-html='<li droppable="true" class="CoC-droppable">this is a Li</li>"><i class="fa fa-header'>
-        </i>
-        <p>Li</p>
-      </li>
-      <li id="chart-image" data-CoC-cloneable="true" data-insert-html="<img droppable='true' class='CoC-droppable' src='http://blogs-images.forbes.com/anthonykosner/files/2014/06/us-browser-share-adobe-index-2014.jpg'>">
-        <i class="fa fa-bar-chart"></i>
-        <p>Chart Image</p>
-      </li>
-      <li id="login-from" data-CoC-cloneable="true" data-insert-html='<div droppable="true" class="CoC-droppable" class="well login-box"> <form action=""> <legend>Login</legend> <div class="form-group"> <label for="username-email">E-mail or Username</label> <input value="" id="username-email" placeholder="E-mail or Username" type="text" class="form-control"/> </div><div class="form-group"> <label for="password">Password</label> <input id="password" value="" placeholder="Password" type="text" class="form-control"/> </div><div class="form-group text-center"> <button class="btn btn-danger btn-cancel-action">Cancel</button> <input type="submit" class="btn btn-success btn-login-submit" value="Login"/> </div></form> </div>'>
-        <i class="fa fa-sign-in"></i>
-        <p>Login Form</p>
-      </li>
-      <li id="login-from" data-CoC-cloneable="true">
-        <i class="fa fa-sign-in"></i>
-        <p>it will be cloned and droped as itself because it doesn't have data-insert-html </p>
-      </li>
-    </ul>
-    <!--clonables -->
-    <!--<iframe data-vdom_id="test" data-collection="modules" data-document_id="5eefe30952c6e94c75fb5e3f" name="html" src="demo1frame.html" frameborder="0" width="100%" height="100%"></iframe>-->
-    <iframe data-vdom_id="test" id="canvas" data-document_id="5eefe30952c6e94c75fb5e3f" src="./iframe.html" frameborder="0" width="100%" height="1000px"></iframe>
+    <div class="display:inline-flex direction:rtl font-size:24px align-items:center list-style-type:none width:100% height:50px">
 
-    <!--<iframe id="canvas" data-vdom_id="test" src="./iframe.html"></iframe>-->
-
-
-    <div style="width: 240px;" data-vdom_target="test" data-socket_room="" class="padding-top:50px" data-group_name="test"></div>
-
+      <!-- Menu Icon Animations -->
+      <a class="nav-toggle menu_icon--Vdots" data-toggle_sidenav="menuR">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </a>
+    </div>
   </div>
+
+  <!-- Modal viewport -->
+  <div class="position:fixed margin-top:50px" data-main_content_id="canvas" id="modal-viewport"></div>
+
+  <!-- Main Container -->
+  <div data-main_content_id="canvas" class="height:100vh overflow:scroll">
+    <iframe data-vdom_id="test" id="canvas" data-document_id="5eefe30952c6e94c75fb5e3f" src="./iframe.html" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+
+  <!-- CoCreate SideNav Right -->
+  <div id="menuR" class="cocreate-sidenav sidenav-right bg:medium-gray"
+    data-main_content="canvas" 
+    sidenav-default_desktop="expanded"
+    sidenav-default_tablet="expanded">
+    
+    <div class="">
+      <ul class="overflow:scroll height:100vh margin:5px bg:white padding:0 padding-left:5px">
+        <div data-vdom_target="test" data-group_name="test"></div>
+        <!-- CoCreate Render to get list of blocks -->
+        <div data-template_id="template1" data-fetch_collection="blocks" data-filter_name="menu-position" data-filter_value="0" data-filter_value_type="number" data-filter_operator="$ne" data-order_by="menu-position" data-order_type="asc" data-pass_to="blocks">
+        </div>
+
+        <!-- template -->
+        <li data-draggable="true" class="template menuItem" id="header" data-insert-html='{{html}}'>
+          <span data-collection="" data-document_id="" name="icon" data-pass_id="blocks" class="padding-10px"></span>
+          <span data-collection="" data-document_id="" name="name" data-pass_id="blocks"></span>
+          <div class="float-right">
+            <a target="modal" href="block-form.html" data-pass_collection="blocks" data-pass_document_id="" data-pass_id="blocks" data-pass_to="form-fields" data-modal_width="320px" data-modal_height="100%" data-modal_color="#229954">
+                <i class="fas fa-pencil-alt"></i>
+      				</a>
+          </div>
+          <span data-collection="" data-document_id="" name="html" data-pass_id="blocks"></span>
+        </li>
+
+      </ul>
+    </div>
+    <div class="resizeHandler"></div>
+  </div>
+  <!-- End CoCreate SideNav Right -->
+
+  <!-- floating btn -->
+  <!--<a class="position:fixed bottom:15px right:15px padding:15px bg:blue grow-hover round z-index:12" target="modal" href="block-form.html" data-pass_collection="blocks" data-modal_width="320px" data-modal_height="100%" data-modal_color="#229954" data-pass_to="render">-->
+	 <!--  <i class="fa fa-plus"></i>-->
+  <!--</a>-->
+  <!-- end floating btn -->
 
   <script>
     var config = {
@@ -126,18 +98,15 @@
       organization_Id: '5de0387b12e200ea63204d6c'
     }
   </script>
+
   <script defer src="https://server.cocreate.app/js/CoCreate.min.js"></script>
-  <script defer src="../../CoCreate-domEditor/src/domEditor.js"></script>
+  <!--<script defer src="https://server.cocreate.app/CoCreate-components/CoCreate-domEditor/src/domEditor.js"></script>-->
   <!--<script defer src="../../CoCreate-domEditor/src/element-config.js"></script>-->
-  <script defer src="../../CoCreate-dnd/dist/dnd.js"></script>
-  <script defer src="../../CoCreate-vdom/dist/CoCreate-vdom.js"></script>
-  <!--<script defer src="../../CoCreate-collapsible/src/collapsible.js"></script>-->
-  <script defer src="../../CoCreate-domEditorPanel/src/domEditorPanel.js"></script>
-  <script defer src="../../CoCreate-toogle/src/CoCreate-toogle.js"></script>
-
-
-
-
+  <script defer src="https://server.cocreate.app/CoCreate-components/CoCreate-dnd/dist/dnd.js"></script>
+  <script defer src="https://server.cocreate.app/CoCreate-components/CoCreate-dnd/src/collaboration.js"></script>
+  <script defer src="https://server.cocreate.app/CoCreate-components/CoCreate-vdom/dist/CoCreate-vdom.js"></script>
+  <script defer src="https://server.cocreate.app/CoCreate-components/CoCreate-domEditorPanel/src/domEditorPanel.js"></script>
+  <script defer src="https://server.cocreate.app/CoCreate-components/CoCreate-toggle/src/CoCreate-toggle.js"></script>
 
 </body>
 
