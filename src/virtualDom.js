@@ -66,7 +66,7 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
     let treeItem = document.createElement('div');
 
 
-    let displayName = element.getAttribute('data-CoC-name');
+    let displayName = element.getAttribute('data-name');
     let name = (displayName ? displayName : element.tagName);
 
     let isParent = element.children.length;
@@ -78,13 +78,13 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
     let metadata = document.createElement('div');
 
     
-    metadata.setAttribute('data-coc-exclude', 'true')
+    metadata.setAttribute('data-exclude', 'true')
     // metadata.classList.add('metadata')
 
 
     let realDomId = element.getAttribute('data-element_id');
     treeItem.setAttribute('data-element_id', realDomId);
-    let atts = Array.from(element.attributes).filter(att => att.name.startsWith('data-coc-draggable') || att.name.startsWith('data-coc-droppable'))
+    let atts = Array.from(element.attributes).filter(att => att.name.startsWith('data-draggable') || att.name.startsWith('data-droppable'))
     atts.forEach(att => {
       treeItem.setAttribute(att.name, att.value);
     })
