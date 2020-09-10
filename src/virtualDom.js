@@ -203,6 +203,13 @@ window.initvdom = () => {
         else
         realdomElement = realdom;
 
+      if(realdom.contains(vdomTargets[i]))
+        {
+          let error = "vdom: target(virtual dom) element can not owns real dom"
+          console.error(error);
+          throw error;
+        }
+      
       let myVirtualDom = new virtualDom({
         realDom: realdomElement,
         virtualDom: vdomTargets[i],
