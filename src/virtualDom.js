@@ -1,4 +1,4 @@
-export default function virtualDom({ realDom, virtualDom, document, options }) {
+export default function virtualDom({ realDom, virtualDom, options }) {
 
   // set options to this.options and set defualts
   this.options = options ? options : {};
@@ -195,14 +195,17 @@ window.initvdom = () => {
 
     if (vdomTargetName) {
 
-      let iframe = document.querySelector('[data-vdom_id=' + vdomTargetName + ']')
+      let realdom = document.querySelector('[data-vdom_id=' + vdomTargetName + ']')
       // iframe.contentWindow.addEventListener('load', () => {
-      let iframeHtml = iframe.contentDocument.body.parentNode;
+      let realdomElement;
+      if(realdom.tagName && realdom.tagName == 'IFRAME')
+        realdomElement = realdom.contentDocument.body.parentNode;
+        else
+        realdomElement = realdom;
 
       let myVirtualDom = new virtualDom({
-        realDom: iframeHtml,
+        realDom: realdomElement,
         virtualDom: vdomTargets[i],
-        document: iframe.contentDocument
       });
       window.vdomObject = myVirtualDom;
       // domEditor({ target: iframeHtml.querySelectorAll('*'), idGenerator: UUID })
