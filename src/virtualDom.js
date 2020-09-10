@@ -84,11 +84,12 @@ export default function virtualDom({ realDom, virtualDom, document, options }) {
 
     let realDomId = element.getAttribute('data-element_id');
     treeItem.setAttribute('data-element_id', realDomId);
-    let atts = Array.from(element.attributes).filter(att => att.name.startsWith('data-draggable') || att.name.startsWith('data-droppable'))
-    atts.forEach(att => {
-      treeItem.setAttribute(att.name, att.value);
-    })
-
+    // let atts = Array.from(element.attributes).filter(att => att.name.startsWith('data-draggable') || att.name.startsWith('data-droppable'))
+    // atts.forEach(att => {
+    //   treeItem.setAttribute(att.name, att.value);
+    // })
+    treeItem.setAttribute("data-draggable", "true");
+    treeItem.setAttribute("data-droppable", "true");
 
     let text = document.createElement('span');
  
