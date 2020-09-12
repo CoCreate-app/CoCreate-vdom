@@ -145,45 +145,54 @@ function UUID(length = 10) {
   return result;
 }
 
-window.initvdom = () => {
-  console.log("vdom is initiationg");
+// window.initvdom = () => {
+//   console.log("vdom is initiationg");
 
-  let vdomTargets = document.querySelectorAll("[data-vdom_target]");
+//   let vdomTargets = document.querySelectorAll("[data-vdom_target]");
 
-  for (let i = 0, len = vdomTargets.length; i < len; i++) {
-    let vdomTargetName = vdomTargets[i].getAttribute("data-vdom_target");
+//   for (let i = 0, len = vdomTargets.length; i < len; i++) {
+//     let vdomTargetName = vdomTargets[i].getAttribute("data-vdom_target");
 
-    if (vdomTargetName) {
-      let realdom = document.querySelector(
-        "[data-vdom_id=" + vdomTargetName + "]"
-      );
-      // iframe.contentWindow.addEventListener('load', () => {
-      let realdomElement;
-      if (realdom.tagName && realdom.tagName == "IFRAME")
-        realdomElement = realdom.contentDocument.body.parentNode;
-      else realdomElement = realdom;
+//     if (vdomTargetName) {
+//       let realdom = document.querySelector(
+//         "[data-vdom_id=" + vdomTargetName + "]"
+//       );
+//       // iframe.contentWindow.addEventListener('load', () => {
+//       let realdomElement;
+//       if (realdom.tagName && realdom.tagName == "IFRAME")
+//         realdomElement = realdom.contentDocument.body.parentNode;
+//       else realdomElement = realdom;
 
-      if (realdom.contains(vdomTargets[i])) {
-        let error = "vdom: target(virtual dom) element can not owns real dom";
-        console.error(error);
-        throw error;
-      }
+//       if (realdom.contains(vdomTargets[i])) {
+//         let error = "vdom: target(virtual dom) element can not owns real dom";
+//         console.error(error);
+//         throw error;
+//       }
 
-      let myVirtualDom = new virtualDom({
-        realDom: realdomElement,
-        virtualDom: vdomTargets[i],
-      });
-      window.vdomObject = myVirtualDom;
-      // domEditor({ target: iframeHtml.querySelectorAll('*'), idGenerator: UUID })
-      // domEditor({ target: vdomTargets[i].querySelectorAll('*'), idGenerator: UUID })
-      // })
-    }
-  }
-  console.log("vdom finish initiating");
-};
+//       let myVirtualDom = new virtualDom({
+//         realDom: realdomElement,
+//         virtualDom: vdomTargets[i],
+//       });
+//       window.vdomObject = myVirtualDom;
+//       // domEditor({ target: iframeHtml.querySelectorAll('*'), idGenerator: UUID })
+//       // domEditor({ target: vdomTargets[i].querySelectorAll('*'), idGenerator: UUID })
+//       // })
+//     }
+//   }
+//   console.log("vdom finish initiating");
+// };
 
-let canvasWindow = document.getElementById("canvas").contentWindow;
-canvasWindow.addEventListener("load", () => {
-  setTimeout(window.initvdom, 200);
-});
+window.vdomInit = function ({realdom, virtualDomContainer})
+{
+    let myVirtualDom = new virtualDom({
+      realDom: realdom,
+      virtualDom: virtualDomContainer,
+    });
+    window.vdomObject = myVirtualDom;
+}
+// obsolete; use communication
+// let canvasWindow = document.getElementById("canvas").contentWindow;
+// canvasWindow.addEventListener("load", () => {
+//   setTimeout(window.initvdom, 200);
+// });
 console.log("vdom finished loading");
