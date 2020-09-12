@@ -122,7 +122,7 @@ export default function virtualDom({ realDom, virtualDom, options }) {
     return icon;
   };
 
-  virtualDom.addEventListener("dndsuccess", ondrop);
+
   this.render([realDom], 0, virtualDom);
 }
 
