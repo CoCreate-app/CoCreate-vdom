@@ -18,7 +18,7 @@ module.exports = {
   // Webpack will bundle all JavaScript into this file
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: isProduction ? "CoCreate-vdom.min.js" : "CoCreate-vdom.js",
   },
 
   // Default mode for Webpack is production.
