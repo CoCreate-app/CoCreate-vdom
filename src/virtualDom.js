@@ -1,4 +1,4 @@
-export default function virtualDom({ realDom, virtualDom, options }) {
+function virtualDomGenerator({ realDom, virtualDom, options }) {
   // set options to this.options and set defualts
   this.options = options ? options : {};
   Object.assign(this.options, {
@@ -37,9 +37,9 @@ export default function virtualDom({ realDom, virtualDom, options }) {
         // virtualEl.classList.add('collapsible')
         this.renderNew(el.children, level + 1, virtualEl);
       }
-
       if (appendDom) appendDom.append(virtualEl);
     }
+
     return virtualEl;
   };
 
@@ -122,7 +122,6 @@ export default function virtualDom({ realDom, virtualDom, options }) {
     return icon;
   };
 
-
   this.render([realDom], 0, virtualDom);
 }
 
@@ -182,17 +181,44 @@ function UUID(length = 10) {
 //   console.log("vdom finish initiating");
 // };
 
-window.vdomInit = function ({realdom, virtualDomContainer})
-{
-    let myVirtualDom = new virtualDom({
+window.CoCreateVdom = {
+  initVdom: function ({ realdom, virtualDom }) {
+    let myVirtualDom = new virtualDomGenerator({
       realDom: realdom,
-      virtualDom: virtualDomContainer,
+      virtualDom,
     });
-    window.vdomObject = myVirtualDom;
-}
-// obsolete; use communication
-// let canvasWindow = document.getElementById("canvas").contentWindow;
-// canvasWindow.addEventListener("load", () => {
-//   setTimeout(window.initvdom, 200);
-// });
+
+    const mutationCallback = function (mutationsList, observer) {
+      for (const mutation of mutationsList) {
+        if (mutation.type === "childList") {
+          mutation.removedNodes.forEach((el) => {
+            let vd = virtualDom.querySelector(
+              "[data-element_id=" + el.getAttribute("data-element_id") + "]"
+            );
+            vd.remove();
+          });
+          let vd = virtualDom.querySelector(
+            "[data-element_id=" +
+              mutation.target.getAttribute("data-element_id") +
+              "]"
+          );
+          let newVd = myVirtualDom.renderNew([mutation.target]);
+          vd.replaceWith(newVd);
+        }
+      }
+    };
+
+    const observer = new MutationObserver(mutationCallback);
+    const config = {
+      attributes: false,
+      childList: true,
+      subtree: true,
+      characterData: false,
+    };
+    observer.observe(realdom, config);
+
+    return myVirtualDom;
+  },
+};
+
 console.log("vdom finished loading");
