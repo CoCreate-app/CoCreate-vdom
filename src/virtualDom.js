@@ -68,9 +68,9 @@ function virtualDomGenerator({ realDom, virtualDom, options }) {
     treeItem.setAttribute("data-draggable", "true");
     treeItem.setAttribute("data-droppable", "true");
 
-    let text = document.createElement("span");
-
+ 
     let text2 = document.createElement("span");
+    text2.classList.add('element-name')
     text2.innerHTML = name;
 
     let lastDisplay;
@@ -95,14 +95,18 @@ function virtualDomGenerator({ realDom, virtualDom, options }) {
 
     if (isParent) {
       let down = this.createFAIcon({ name: "fa-caret-down" });
-      text.insertAdjacentElement("afterbegin", down);
+      let collapse = document.createElement("span");
+      collapse.insertAdjacentElement("afterbegin", down);
 
+      collapse.classList.add('icon-container')
+      
+      metadata.append(collapse);
       down.setAttribute("data-toggle", "collapse");
       down.setAttribute("data-toggle_closest", ".vdom-item");
       down.setAttribute("data-transform_to", "fa fa-caret-right");
     }
 
-    metadata.append(text);
+    
     metadata.append(text2);
     metadata.append(arrow);
     treeItem.append(metadata);
@@ -192,28 +196,40 @@ window.CoCreateVdom = {
       for (const mutation of mutationsList) {
         if (mutation.type === "childList") {
           mutation.removedNodes.forEach((el) => {
-            let vd = virtualDom.querySelector(
-              "[data-element_id=" + el.getAttribute("data-element_id") + "]"
-            );
-            vd.remove();
+            
+            if(el.tagName)
+            {
+              let id =el.getAttribute("data-element_id");
+              if(id)
+              {
+                let vd = virtualDom.querySelector(
+                  "[data-element_id=" + id + "]"
+                );
+               vd.remove();
+              }
+            }
+
           });
-          let vd = virtualDom.querySelector(
-            "[data-element_id=" +
-              mutation.target.getAttribute("data-element_id") +
-              "]"
-          );
-          let newVd = myVirtualDom.renderNew([mutation.target]);
-          vd.replaceWith(newVd);
+          let id = mutation.target.getAttribute("data-element_id");
+          if(id)
+          {
+              let vd = virtualDom.querySelector( "[data-element_id=" + id +"]"  );
+              let newVd = myVirtualDom.renderNew([mutation.target]);
+               vd.replaceWith(newVd);
+          }
+
+
         }
       }
     };
 
     const observer = new MutationObserver(mutationCallback);
+    //todo: check why still node type text being triggered
     const config = {
-      attributes: false,
+
       childList: true,
       subtree: true,
-      characterData: false,
+
     };
     observer.observe(realdom, config);
 
