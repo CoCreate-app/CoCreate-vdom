@@ -20,50 +20,88 @@
       opacity: .5;
     }
 
-    /*.parent.vdom-item .vdom-item span {*/
+    /*.parent.vdom-item .vdom-item .element-name {*/
     /*  padding-left: 20px;*/
     /*}*/
 
-    /*.parent .parent.vdom-item .vdom-item span {*/
+    /*.parent .parent.vdom-item .vdom-item .element-name {*/
     /*  padding-left: 30px;*/
     /*}*/
 
-    /*.parent .parent .parent.vdom-item .vdom-item span {*/
+    /*.parent .parent .parent.vdom-item .vdom-item .element-name {*/
     /*  padding-left: 40px;*/
     /*}*/
 
-    /*.parent .parent .parent .parent.vdom-item .vdom-item span {*/
+    /*.parent .parent .parent .parent.vdom-item .vdom-item .element-name {*/
     /*  padding-left: 50px;*/
     /*}*/
 
-    /*.parent .parent .parent .parent .parent.vdom-item .vdom-item span {*/
+    /*.parent .parent .parent .parent .parent.vdom-item .vdom-item .element-name {*/
     /*  padding-left: 60px;*/
     /*}*/
 
-    .parent.vdom-item span {
+    .parent .icon-container {
       padding-left: 10px;
     }
 
-    .parent .parent.vdom-item span {
+    .parent .parent .icon-container {
       padding-left: 20px;
     }
 
-    .parent .parent .parent.vdom-item span {
+    .parent .parent .parent .icon-container {
       padding-left: 30px;
     }
 
-    .parent .parent .parent .parent.vdom-item span {
+    .parent .parent .parent .parent .icon-container {
       padding-left: 40px;
     }
 
-    .parent .parent .parent .parent .parent.vdom-item span {
+    .parent .parent .parent .parent .parent .icon-container {
       padding-left: 50px;
     }
-
-    span i {
-      padding-right: 5px;
+    .parent .parent .parent .parent .parent .parent .icon-container {
+      padding-left: 60px;
     }
-
+    .parent .parent .parent .parent .parent .parent .parent .icon-container {
+      padding-left: 70px;
+    }
+    .parent .parent .parent .parent .parent .parent .parent .parent .icon-container {
+      padding-left: 80px;
+    }
+    
+    .parent .element-name {
+      padding-left: 40px;
+    }
+    .parent .parent .element-name{
+      padding-left: 50px;
+    }
+    .parent .parent .parent .element-name{
+      padding-left: 60px;
+    }
+    .parent .parent .parent .parent .element-name{
+      padding-left: 70px;
+    }
+    .parent .parent .parent .parent .parent .element-name {
+      padding-left: 80px;
+    }
+    .parent .parent .parent .parent .parent .parent .element-name {
+      padding-left: 90px;
+    }
+    .parent .parent .parent .parent .parent .parent .parent .element-name {
+      padding-left: 100px;
+    }
+    .parent .parent .parent .parent .parent  .parent  .parent  .parent .element-name {
+      padding-left: 110px;
+    }
+    
+    .parent .icon-container + .element-name{
+      padding-left: 0px !important;
+    }
+    
+    /*span i {*/
+    /*  padding-right: 5px;*/
+    /*}*/
+    
     .parent>span {
       /* the width of arrow */
       margin-left: -6px;

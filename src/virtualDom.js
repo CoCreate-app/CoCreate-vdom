@@ -7,7 +7,7 @@ function virtualDomGenerator({ realDom, virtualDom, options }) {
     exclude: ["SCRIPT"],
   });
 
-  this.render = function (elList, level = 0, appendDom) {
+  this.render = function(elList, level = 0, appendDom) {
     for (let el of elList) {
       if (this.options.exclude.includes(el.tagName)) continue;
 
@@ -24,7 +24,7 @@ function virtualDomGenerator({ realDom, virtualDom, options }) {
     }
   };
 
-  this.renderNew = function (elList, level = 0, appendDom) {
+  this.renderNew = function(elList, level = 0, appendDom) {
     let virtualEl;
     for (let el of elList) {
       if (this.options.exclude.includes(el.tagName)) continue;
@@ -43,7 +43,7 @@ function virtualDomGenerator({ realDom, virtualDom, options }) {
     return virtualEl;
   };
 
-  this.createVirtualElement = function ({ options, element }) {
+  this.createVirtualElement = function({ options, element }) {
     let treeItem = document.createElement("div");
 
     let displayName = element.getAttribute("data-name");
@@ -80,7 +80,8 @@ function virtualDomGenerator({ realDom, virtualDom, options }) {
           if (element.style.display == "none") {
             element.style.display = lastDisplay;
             treeItem.classList.remove("layer-hidden");
-          } else {
+          }
+          else {
             lastDisplay = element.style.display;
             element.style.display = "none";
             treeItem.classList.add("layer-hidden");
@@ -111,7 +112,7 @@ function virtualDomGenerator({ realDom, virtualDom, options }) {
     return treeItem;
   };
 
-  this.createFAIcon = function ({ name, event }) {
+  this.createFAIcon = function({ name, event }) {
     let icon = document.createElement("i");
     icon.classList.add("fa");
     icon.classList.add(name);
@@ -184,7 +185,7 @@ function UUID(length = 10) {
 // };
 
 window.CoCreateVdom = {
-  initVdom: function ({ realdom, virtualDom }) {
+  initVdom: function({ realdom, virtualDom }) {
     let myVirtualDom = new virtualDomGenerator({
       realDom: realdom,
       virtualDom,
@@ -192,8 +193,9 @@ window.CoCreateVdom = {
 
     let realDomWindow = realdom.ownerDocument.defaultView;
 
-    realDomWindow.CoCreateObserver.add({
+    CoCreateObserver.add({
       name: "vdom",
+      exclude:".vdom-item",
       observe: ["childList"],
       task: (mutation) => {
         mutation.removedNodes.forEach((el) => {
@@ -219,5 +221,7 @@ window.CoCreateVdom = {
     return myVirtualDom;
   },
 };
+
+
 
 console.log("vdom finished loading");
