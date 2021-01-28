@@ -184,7 +184,7 @@ function UUID(length = 10) {
 //   console.log("vdom finish initiating");
 // };
 
-window.CoCreateVdom = {
+const vdom = {
   initVdom: function({ realdom, virtualDom }) {
     let myVirtualDom = new virtualDomGenerator({
       realDom: realdom,
@@ -198,6 +198,7 @@ window.CoCreateVdom = {
       exclude:".vdom-item",
       observe: ["childList"],
       task: (mutation) => {
+        if(mutation.removedNodes)
         mutation.removedNodes.forEach((el) => {
           if (el.tagName) {
             let id = el.getAttribute("data-element_id");
@@ -222,6 +223,6 @@ window.CoCreateVdom = {
   },
 };
 
-
+export default vdom;
 
 console.log("vdom finished loading");

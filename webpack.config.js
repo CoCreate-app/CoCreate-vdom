@@ -1,6 +1,8 @@
 // Webpack uses this to work with directories
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 let isProduction = process.env.NODE_ENV === 'production';
 
@@ -10,15 +12,18 @@ module.exports = {
 
   // Path to your entry point. From this file Webpack will begin his work
   entry: {
-    'CoCreate-vdom': './src/virtualDom.js',
-    // 'demo1': './demo/demo1.js',
+    'CoCreate-vdom': './src/CoCreate-vdom.js',
   },
 
-  // Path and filename of your result bundle.
+ // Path and filename of your result bundle.
   // Webpack will bundle all JavaScript into this file
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: isProduction ? "CoCreate-vdom.min.js" : "CoCreate-vdom.js",
+    filename: isProduction ? '[name].min.js' : '[name].js',
+    libraryTarget: 'umd',
+    libraryExport: 'default',
+    library: 'CoCreateVdom',
+    globalObject: "this",
   },
 
   // Default mode for Webpack is production.
@@ -28,15 +33,16 @@ module.exports = {
   mode: isProduction ? 'production' : 'development',
   module: {
     rules: [{
-      test: /\.js$/,
-      exclude: /(node_modules)/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env']
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
         }
-      }
-    }]
+      },
+    ]
   },
 
   // add source map
@@ -51,4 +57,5 @@ module.exports = {
       },
     })],
   },
+
 };
