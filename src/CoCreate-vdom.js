@@ -193,11 +193,11 @@ const vdom = {
 
     let realDomWindow = realdom.ownerDocument.defaultView;
 
-    CoCreateObserver.add({
+    CoCreate.observer.add({
       name: "vdom",
       exclude:".vdom-item",
       observe: ["childList"],
-      task: (mutation) => {
+      callback: (mutation) => {
         if(mutation.removedNodes)
         mutation.removedNodes.forEach((el) => {
           if (el.tagName) {
