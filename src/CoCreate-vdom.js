@@ -193,7 +193,7 @@ const vdom = {
 
     let realDomWindow = realdom.ownerDocument.defaultView;
 
-    CoCreate.observer.add({
+    CoCreate.observer.init({
       name: "vdom",
       exclude:".vdom-item",
       observe: ["childList"],
