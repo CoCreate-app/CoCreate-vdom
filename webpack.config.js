@@ -12,7 +12,7 @@ module.exports = {
 
   // Path to your entry point. From this file Webpack will begin his work
   entry: {
-    'CoCreate-vdom': './src/CoCreate-vdom.js',
+    'CoCreate-vdom': './src/index.js',
   },
 
  // Path and filename of your result bundle.

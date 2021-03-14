@@ -1,15 +1,10 @@
-function virtualDomGenerator({ realDom, virtualDom, options }) {
-  // set options to this.options and set defualts
-  this.options = options ? options : {};
-  Object.assign(this.options, {
-    indentBase: 10,
-    indentSum: 15,
-    exclude: ["SCRIPT"],
-  });
+function virtualDomGenerator({ realDom, virtualDom, ignore }) {
+
+
 
   this.render = function(elList, level = 0, appendDom) {
     for (let el of elList) {
-      if (this.options.exclude.includes(el.tagName)) continue;
+      if (el.matches(ignore)) continue;
 
       let virtualEl = this.createVirtualElement({
         element: el,
@@ -27,7 +22,7 @@ function virtualDomGenerator({ realDom, virtualDom, options }) {
   this.renderNew = function(elList, level = 0, appendDom) {
     let virtualEl;
     for (let el of elList) {
-      if (this.options.exclude.includes(el.tagName)) continue;
+      if (el.matches(ignore)) continue;
 
       virtualEl = this.createVirtualElement({
         element: el,
@@ -185,10 +180,11 @@ function UUID(length = 10) {
 // };
 
 const vdom = {
-  initVdom: function({ realdom, virtualDom }) {
+  initVdom: function({ realdom, virtualDom, ignore}) {
     let myVirtualDom = new virtualDomGenerator({
       realDom: realdom,
       virtualDom,
+      ignore
     });
 
     let realDomWindow = realdom.ownerDocument.defaultView;
