@@ -1,3 +1,6 @@
+import observer from '../../CoCreate-observer/src'
+import './CoCreate-vdom.css';
+
 function virtualDomGenerator({ realDom, virtualDom, ignore }) {
 
 
@@ -189,7 +192,7 @@ const vdom = {
 
     let realDomWindow = realdom.ownerDocument.defaultView;
 
-    CoCreate.observer.init({
+    observer.init({
       name: "vdom",
       exclude:".vdom-item",
       observe: ["childList"],
