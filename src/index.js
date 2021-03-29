@@ -1,4 +1,4 @@
-import observer from '../../CoCreate-observer/src'
+import observer from '@cocreate/observer'
 import './CoCreate-vdom.css';
 
 function virtualDomGenerator({ realDom, virtualDom, ignore }) {
