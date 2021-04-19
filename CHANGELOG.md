@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.1...v1.0.2) (2021-04-19)
+
+
+### Bug Fixes
+
+* ci and build process ([e8e7b39](https://github.com/CoCreate-app/CoCreate-vdom/commit/e8e7b39909edafc62799caf9a9024b2859a49a33))
+* npm publish and cdn deployment ([676527d](https://github.com/CoCreate-app/CoCreate-vdom/commit/676527dfc0a305a90cf0f72334f5d604d2de01f3))
+
 ## [1.0.1](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.0...v1.0.1) (2021-03-29)
 
 
