@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.3...v1.0.4) (2021-04-23)
+
+
+### Bug Fixes
+
+* readme and documentation. Removed securitykeys ([90a6789](https://github.com/CoCreate-app/CoCreate-vdom/commit/90a6789c709e413e15824dde6f2200d8cb9d01ae))
+
 ## [1.0.3](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.2...v1.0.3) (2021-04-19)
 
 
