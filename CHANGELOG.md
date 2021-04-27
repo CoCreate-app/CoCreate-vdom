@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.4...v1.0.5) (2021-04-27)
+
+
+### Bug Fixes
+
+* Update to readme, demo, added cdn scripts ([800262b](https://github.com/CoCreate-app/CoCreate-vdom/commit/800262bf61b4ee04ad85cb1353717e19c3f27678))
+
 ## [1.0.4](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.3...v1.0.4) (2021-04-23)
 
 
