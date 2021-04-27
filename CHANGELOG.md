@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.5...v1.0.6) (2021-04-27)
+
+
+### Bug Fixes
+
+* add host in docs ([a581afa](https://github.com/CoCreate-app/CoCreate-vdom/commit/a581afa013bcb5ba53d8668c0968a57e3fbf13c1))
+
 ## [1.0.5](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.4...v1.0.5) (2021-04-27)
 
 
