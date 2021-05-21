@@ -1,5 +1,5 @@
 import observer from '@cocreate/observer'
-import './CoCreate-vdom.css';
+import './index.css';
 
 function virtualDomGenerator({ realDom, virtualDom, ignore }) {
 
