@@ -1,4 +1,4 @@
-import observer from '@cocreate/observer'
+import observer from '@cocreate/observer';
 import './index.css';
 
 function virtualDomGenerator({ realDom, virtualDom, ignore }) {
@@ -128,100 +128,60 @@ function virtualDomGenerator({ realDom, virtualDom, ignore }) {
 
 /*global DOMParser*/
 
-console.log("vdom is loading");
 
-function UUID(length = 10) {
-  var result = "";
-  var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-
-  var charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-
-  var d = new Date().toTimeString();
-  var random = d.replace(/[\W_]+/g, "").substr(0, 6);
-  result += random;
-  return result;
-}
-
-// window.initvdom = () => {
-//   console.log("vdom is initiationg");
-
-//   let vdomTargets = document.querySelectorAll("[data-vdom_target]");
-
-//   for (let i = 0, len = vdomTargets.length; i < len; i++) {
-//     let vdomTargetName = vdomTargets[i].getAttribute("data-vdom_target");
-
-//     if (vdomTargetName) {
-//       let realdom = document.querySelector(
-//         "[data-vdom_id=" + vdomTargetName + "]"
-//       );
-//       // iframe.contentWindow.addEventListener('load', () => {
-//       let realdomElement;
-//       if (realdom.tagName && realdom.tagName == "IFRAME")
-//         realdomElement = realdom.contentDocument.body.parentNode;
-//       else realdomElement = realdom;
-
-//       if (realdom.contains(vdomTargets[i])) {
-//         let error = "vdom: target(virtual dom) element can not owns real dom";
-//         console.error(error);
-//         throw error;
-//       }
-
-//       let myVirtualDom = new virtualDom({
-//         realDom: realdomElement,
-//         virtualDom: vdomTargets[i],
-//       });
-//       window.vdomObject = myVirtualDom;
-//       // domEditor({ target: iframeHtml.querySelectorAll('*'), idGenerator: UUID })
-//       // domEditor({ target: vdomTargets[i].querySelectorAll('*'), idGenerator: UUID })
-//       // })
-//     }
-//   }
-//   console.log("vdom finish initiating");
-// };
 
 const vdom = {
-  initVdom: function({ realdom, virtualDom, ignore}) {
+  initVdom: function({ realdom, virtualDom, ignore }) {
     let myVirtualDom = new virtualDomGenerator({
       realDom: realdom,
       virtualDom,
       ignore
     });
 
-    let realDomWindow = realdom.ownerDocument.defaultView;
+    let Window = realdom.tagName === 'IFRAME' ? realdom.contentWindow : realdom.ownerDocument.defaultView;
 
-    observer.init({
-      name: "vdom",
-      exclude:".vdom-item",
-      observe: ["childList"],
-      callback: (mutation) => {
-        if(mutation.removedNodes)
-        mutation.removedNodes.forEach((el) => {
-          if (el.tagName) {
-            let id = el.getAttribute("data-element_id");
+    Window.addEventListener('load', () => {
+
+      Window.CoCreate.observer.init({
+        name: "vdom",
+        exclude: ".vdom-item",
+        observe: ["childList"],
+        callback: (mutation) => {
+          if (mutation.isRemoved && mutation.target.tagName) {
+            let id = mutation.target.tagName.getAttribute("data-element_id");
             if (id) {
               let vd = virtualDom.querySelector("[data-element_id=" + id + "]");
               if (vd) vd.remove();
             }
           }
-        });
-        let id = mutation.target.getAttribute("data-element_id");
-        if (id) {
+
+          let newVd = myVirtualDom.renderNew([mutation.target]);
+          let id = mutation.target.getAttribute("data-element_id");
+          if (!id) return;
+          let parent = mutation.target.parentElement;
+
+          if (parent) {
+            let pid = parent.getAttribute("data-element_id");
+            if (!pid) return;
+            let parentVirutalDom = virtualDom.querySelector("[data-element_id=" + pid + "]");
+
+            myVirtualDom.renderNew([mutation.target], undefined, parentVirutalDom);
+
+
+          }
           let vd = virtualDom.querySelector("[data-element_id=" + id + "]");
           if (vd) {
             let newVd = myVirtualDom.renderNew([mutation.target]);
             vd.replaceWith(newVd);
+
           }
-        }
-      },
-    });
+
+        },
+      });
+    })
 
     return myVirtualDom;
   },
 };
 
 export default vdom;
-
-console.log("vdom finished loading");
