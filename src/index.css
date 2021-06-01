@@ -2,18 +2,26 @@
       display: flex;
       flex-direction: column;
       order: 2;
-      background-color: white;
-      border-top: 1px solid gray;
+      background-color: whitesmoke;
+      /*border-top: 1px solid gray;*/
       cursor: pointer;
     }
 
+    .vdom-item .fa-eye {
+      margin: 5px;
+    }
+    
+    .vdom-item .fa-caret-down {
+      margin: 5px;
+    }
+    
     .vdom-item .fa-arrows-alt {
       cursor: all-scroll;
       float: right;
+      margin: 5px;
     }
-
-    .vdom-item i {
-      padding: 5px;
+    .vdom-item .element-name {
+      margin: 5px;
     }
 
     .vdom-item.layer-hidden {
