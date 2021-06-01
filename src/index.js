@@ -140,7 +140,7 @@ const vdom = {
 
     let Window = realdom.tagName === 'IFRAME' ? realdom.contentWindow : realdom.ownerDocument.defaultView;
 
-    // Window.addEventListener('load', () => {
+  
 
     Window.CoCreate.observer.init({
       name: "vdom",
@@ -155,35 +155,39 @@ const vdom = {
             if (vd) vd.remove();
           }
         }
-        let id = el.getAttribute('data-element_id');
-        let elVdom = myVirtualDom.renderNew([el]);
-        let vd = virtualDom.querySelector(`[data-element_id="${id}"]`);
-        if (vd)
-          vd.replaceWith(elVdom);
+        else {
+
+          let id = el.getAttribute('data-element_id');
+          let elVdom = myVirtualDom.renderNew([el]);
+          if (!elVdom) return;
+          let vd = virtualDom.querySelector(`[data-element_id="${id}"]`);
+          if (vd)
+            vd.replaceWith(elVdom);
 
 
-        if (el.previousElementSibling) {
+          if (el.previousElementSibling) {
 
-          let id = el.previousElementSibling.getAttribute("data-element_id");
-          if (!id) return;
-          let sib = virtualDom.querySelector(`[data-element_id="${id}"]`);
-
-
-          sib.insertAdjacentElement('afterend', elVdom)
-        }
-        else if (el.parentElement) {
-          let id = el.parentElement.getAttribute("data-element_id");
-          if (!id) return;
-          let sib = virtualDom.querySelector(`[data-element_id="${id}"]`);
+            let id = el.previousElementSibling.getAttribute("data-element_id");
+            if (!id) return;
+            let sib = virtualDom.querySelector(`[data-element_id="${id}"]`);
 
 
-          sib.insertAdjacentElement('afterbegin', elVdom)
+            sib.insertAdjacentElement('afterend', elVdom)
+          }
+          else if (el.parentElement) {
+            let id = el.parentElement.getAttribute("data-element_id");
+            if (!id) return;
+            let sib = virtualDom.querySelector(`[data-element_id="${id}"]`);
+
+
+            sib.insertAdjacentElement('afterbegin', elVdom)
+          }
         }
 
 
       },
     });
-    // })
+    
 
     return myVirtualDom;
   },
