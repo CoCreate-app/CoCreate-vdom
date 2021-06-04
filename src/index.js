@@ -137,60 +137,77 @@ const vdom = {
       virtualDom,
       ignore
     });
-
     let Window = realdom.tagName === 'IFRAME' ? realdom.contentWindow : realdom.ownerDocument.defaultView;
 
-  
+    onLoadorExec(Window, () => {
 
-    Window.CoCreate.observer.init({
-      name: "vdom",
-      exclude: ".vdom-item",
-      observe: ["childList"],
-      callback: (mutation) => {
-        let el = mutation.target;
-        if (mutation.isRemoved && el.tagName) {
-          let id = el.getAttribute("data-element_id");
-          if (id) {
+      Window.CoCreate.observer.init({
+        name: "vdom",
+        exclude: ".vdom-item",
+        observe: ["childList",'subtree'],
+        callback: (mutation) => {
+          let el = mutation.target;
+          if (mutation.isRemoved && el.tagName) {
+            let id = el.getAttribute("data-element_id");
+            if (id) {
+              let vd = virtualDom.querySelector(`[data-element_id="${id}"]`);
+              if (vd) vd.remove();
+            }
+          }
+          else {
+
+            let id = el.getAttribute('data-element_id');
+            let elVdom = myVirtualDom.renderNew([el]);
+            if (!elVdom) return;
             let vd = virtualDom.querySelector(`[data-element_id="${id}"]`);
-            if (vd) vd.remove();
+            if (vd)
+              vd.replaceWith(elVdom);
+
+
+            if (el.previousElementSibling) {
+
+              let id = el.previousElementSibling.getAttribute("data-element_id");
+              if (!id) return;
+              let sib = virtualDom.querySelector(`[data-element_id="${id}"]`);
+
+
+              sib && sib.insertAdjacentElement('afterend', elVdom)
+            }
+            else if (el.parentElement) {
+              let id = el.parentElement.getAttribute("data-element_id");
+              if (!id) return;
+              let sib = virtualDom.querySelector(`[data-element_id="${id}"]`);
+
+
+              sib && sib.insertAdjacentElement('afterbegin', elVdom)
+            }
           }
-        }
-        else {
-
-          let id = el.getAttribute('data-element_id');
-          let elVdom = myVirtualDom.renderNew([el]);
-          if (!elVdom) return;
-          let vd = virtualDom.querySelector(`[data-element_id="${id}"]`);
-          if (vd)
-            vd.replaceWith(elVdom);
 
 
-          if (el.previousElementSibling) {
+        },
+      });
+    })
 
-            let id = el.previousElementSibling.getAttribute("data-element_id");
-            if (!id) return;
-            let sib = virtualDom.querySelector(`[data-element_id="${id}"]`);
-
-
-            sib.insertAdjacentElement('afterend', elVdom)
-          }
-          else if (el.parentElement) {
-            let id = el.parentElement.getAttribute("data-element_id");
-            if (!id) return;
-            let sib = virtualDom.querySelector(`[data-element_id="${id}"]`);
-
-
-            sib.insertAdjacentElement('afterbegin', elVdom)
-          }
-        }
-
-
-      },
-    });
-    
 
     return myVirtualDom;
   },
+
+
+
 };
+
+
+function onLoadorExec(Window, callback) {
+
+  if (Window.document.readyState === "complete")
+    callback()
+  else
+    Window.addEventListener('load', () => {
+      callback
+
+    });
+
+}
+
 
 export default vdom;
