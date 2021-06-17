@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.7...v1.0.8) (2021-06-16)
+
+
+### Bug Fixes
+
+* added header for seo ([6323375](https://github.com/CoCreate-app/CoCreate-vdom/commit/6323375309c95653351b5cbacc1ff7a8961094a1))
+
 ## [1.0.7](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.6...v1.0.7) (2021-05-08)
 
 
