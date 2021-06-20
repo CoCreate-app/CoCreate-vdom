@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.8...v1.0.9) (2021-06-20)
+
+
+### Bug Fixes
+
+* new mutaionObserver init function ([db556e4](https://github.com/CoCreate-app/CoCreate-vdom/commit/db556e4f13c16f29c3904f23534023c957bad463))
+
 ## [1.0.8](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.7...v1.0.8) (2021-06-16)
 
 
