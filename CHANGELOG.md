@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.10...v1.0.11) (2021-06-24)
+
+
+### Bug Fixes
+
+* package versioningto 1.0.0 ([5433615](https://github.com/CoCreate-app/CoCreate-vdom/commit/5433615ef18601440d3ea376048ebc83db73be06))
+
 ## [1.0.10](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.9...v1.0.10) (2021-06-24)
 
 
