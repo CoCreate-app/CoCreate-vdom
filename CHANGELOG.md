@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.12...v1.0.13) (2021-06-30)
+
+
+### Bug Fixes
+
+* automated and manual workflows ([de250d9](https://github.com/CoCreate-app/CoCreate-vdom/commit/de250d930c7108b944895ac55665e816bd1961a8))
+
 ## [1.0.12](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.11...v1.0.12) (2021-06-25)
 
 
