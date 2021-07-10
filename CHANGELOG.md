@@ -1,3 +1,10 @@
+## [1.0.16](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.15...v1.0.16) (2021-07-10)
+
+
+### Bug Fixes
+
+* gitignore all logs ([8ee3bd4](https://github.com/CoCreate-app/CoCreate-vdom/commit/8ee3bd44d2a9a8d80412c14a86f0ab1cd47df626))
+
 ## [1.0.15](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.14...v1.0.15) (2021-07-07)
 
 
