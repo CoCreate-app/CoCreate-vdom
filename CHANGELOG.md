@@ -1,3 +1,11 @@
+## [1.0.17](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.16...v1.0.17) (2021-07-13)
+
+
+### Bug Fixes
+
+* add yarn lockfile to git ignore ([7e9b6a4](https://github.com/CoCreate-app/CoCreate-vdom/commit/7e9b6a4c946eb8ddf78549e43af8861b41315061))
+* remove yarn.lock ([85a1695](https://github.com/CoCreate-app/CoCreate-vdom/commit/85a1695c34a173815f04b44ed53758d49f9d464d))
+
 ## [1.0.16](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.15...v1.0.16) (2021-07-10)
 
 
