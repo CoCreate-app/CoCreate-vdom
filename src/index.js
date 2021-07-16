@@ -143,8 +143,8 @@ const vdom = {
 
       Window.CoCreate.observer.init({
         name: "vdom",
-
-        observe: ["addedNodes"],
+        observe: ['addedNodes'],
+      	target: '[data-vdom_target]',
         callback: (mutation) => {
           if (!mutation.target.tagName) return;
           let el = mutation.target;
