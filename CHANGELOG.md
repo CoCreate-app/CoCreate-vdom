@@ -1,3 +1,11 @@
+## [1.0.19](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.18...v1.0.19) (2021-07-17)
+
+
+### Bug Fixes
+
+* init and update demos scripts ([1ebd178](https://github.com/CoCreate-app/CoCreate-vdom/commit/1ebd178d44e6d29cdf3f7b46d5340f4c46dbe2d4))
+* workflows ([20c733e](https://github.com/CoCreate-app/CoCreate-vdom/commit/20c733e16b36e35e7e77938986692b421c70bf07))
+
 ## [1.0.18](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.17...v1.0.18) (2021-07-14)
 
 
