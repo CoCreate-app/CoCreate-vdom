@@ -54,19 +54,19 @@
         <ul class="overflow:scroll height:100vh margin:5px background:white padding:0 padding-left:5px">
           <div data-vdom_target="test" data-group_name="test"></div>
           <!-- CoCreate Render to get list of blocks -->
-          <div data-template_id="template1" data-fetch_collection="blocks" data-filter_name="menu-position" data-filter_value="0" data-filter_value_type="number" data-filter_operator="$ne" data-order_by="menu-position" data-order_type="asc" data-pass_to="blocks">
+          <div template_id="template1" fetch-collection="blocks" filter-name="menu-position" filter-value="0" filter-value_type="number" filter-operator="$ne" order-by="menu-position" order-type="asc" pass_to="blocks">
           </div>
   
           <!-- template -->
           <li data-draggable="true" class="template menuItem" id="header" data-insert-html='{{html}}'>
-            <span collection="" document_id="" name="icon" data-pass_id="blocks" class="padding-10px"></span>
-            <span collection="" document_id="" name="name" data-pass_id="blocks"></span>
+            <span collection="" document_id="" name="icon" pass_id="blocks" class="padding-10px"></span>
+            <span collection="" document_id="" name="name" pass_id="blocks"></span>
             <div class="float-right">
-              <a target="modal" href="block-form.html" data-pass_collection="blocks" data-pass_document_id="" data-pass_id="blocks" data-pass_to="form-fields" data-modal_width="320px" data-modal_height="100%" data-modal_color="#229954">
+              <a target="modal" href="block-form.html" pass-collection="blocks" pass-document_id="" pass_id="blocks" pass_to="form-fields" modal-width="320px" modal-height="100%" modal-color="#229954">
                   <i class="fas fa-pencil-alt"></i>
         				</a>
             </div>
-            <span collection="" document_id="" name="html" data-pass_id="blocks"></span>
+            <span collection="" document_id="" name="html" pass_id="blocks"></span>
           </li>
   
         </ul>
