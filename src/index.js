@@ -99,8 +99,8 @@ function virtualDomGenerator({ realDom, virtualDom, ignore }) {
       collapse.classList.add("icon-container");
 
       metadata.append(collapse);
-      down.setAttribute("data-toggle", "collapse");
-      down.setAttribute("data-toggle_closest", ".vdom-item");
+      down.setAttribute("toggle", "collapse");
+      down.setAttribute("toggle-closest", ".vdom-item");
       down.setAttribute("data-transform_to", "fa fa-caret-right");
     }
 
