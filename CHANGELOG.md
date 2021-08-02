@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.1.0...v1.1.1) (2021-08-02)
+
+
+### Bug Fixes
+
+* remove data- from attributes ([b6851a6](https://github.com/CoCreate-app/CoCreate-vdom/commit/b6851a6e46d966fb7bcf64408880fc72dd34f924))
+* update data-fullscreen to fullscreen ([8f2a9bc](https://github.com/CoCreate-app/CoCreate-vdom/commit/8f2a9bca02f638960d04d0456e58014c53b13186))
+
 # [1.1.0](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.0.19...v1.1.0) (2021-07-28)
 
 
