@@ -101,7 +101,7 @@ function virtualDomGenerator({ realDom, virtualDom, ignore }) {
       metadata.append(collapse);
       down.setAttribute("toggle", "collapse");
       down.setAttribute("toggle-closest", ".vdom-item");
-      down.setAttribute("data-transform_to", "fa fa-caret-right");
+      // down.setAttribute("data-transform_to", "fa fa-caret-right");
     }
 
     metadata.append(text2);
