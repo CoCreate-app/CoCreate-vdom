@@ -1,3 +1,12 @@
+## [1.1.2](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.1.1...v1.1.2) (2021-08-13)
+
+
+### Bug Fixes
+
+* remove data- from vdom attributes ([5a42585](https://github.com/CoCreate-app/CoCreate-vdom/commit/5a425855a43d66131567fa113ad50e91dd09b5b7))
+* replace data-transform with toggle ([745b2e8](https://github.com/CoCreate-app/CoCreate-vdom/commit/745b2e8e4560b3a359be11c3a6443351ba356591))
+* update to  docs ([0c2c255](https://github.com/CoCreate-app/CoCreate-vdom/commit/0c2c25579914559afd4c3da85c2fe77d52a53880))
+
 ## [1.1.1](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.1.0...v1.1.1) (2021-08-02)
 
 
