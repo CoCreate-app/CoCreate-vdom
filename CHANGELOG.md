@@ -1,3 +1,11 @@
+## [1.1.3](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.1.2...v1.1.3) (2021-08-14)
+
+
+### Bug Fixes
+
+* remove data- from dnd attributes ([e464ce0](https://github.com/CoCreate-app/CoCreate-vdom/commit/e464ce0f5ef05c078e3c45b110172302dca392b3))
+* rename data-element_id to element_id ([64f0933](https://github.com/CoCreate-app/CoCreate-vdom/commit/64f0933557a74cb09beedd3a249c21bd2f444622))
+
 ## [1.1.2](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.1.1...v1.1.2) (2021-08-13)
 
 
