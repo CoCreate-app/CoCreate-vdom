@@ -54,17 +54,17 @@ function virtualDomGenerator({ realDom, virtualDom, ignore }) {
 
     let metadata = document.createElement("div");
 
-    metadata.setAttribute("data-exclude", "true");
+    metadata.setAttribute("dnd-exclude", "true");
     // metadata.classList.add('metadata')
 
     let realDomId = element.getAttribute("data-element_id");
     treeItem.setAttribute("data-element_id", realDomId);
-    // let atts = Array.from(element.attributes).filter(att => att.name.startsWith('data-draggable') || att.name.startsWith('data-droppable'))
+    // let atts = Array.from(element.attributes).filter(att => att.name.startsWith('draggable') || att.name.startsWith('droppable'))
     // atts.forEach(att => {
     //   treeItem.setAttribute(att.name, att.value);
     // })
-    treeItem.setAttribute("data-draggable", "true");
-    treeItem.setAttribute("data-droppable", "true");
+    treeItem.setAttribute("draggable", "true");
+    treeItem.setAttribute("droppable", "true");
 
     let text2 = document.createElement("span");
     text2.classList.add("element-name");

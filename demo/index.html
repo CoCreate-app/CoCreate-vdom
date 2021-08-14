@@ -52,13 +52,13 @@
       
       <div class="">
         <ul class="overflow:scroll height:100vh margin:5px background:white padding:0 padding-left:5px">
-          <div vdom-target="test" data-group_name="test"></div>
+          <div vdom-target="test" dnd-group-name="test"></div>
           <!-- CoCreate Render to get list of blocks -->
           <div template_id="template1" fetch-collection="blocks" filter-name="menu-position" filter-value="0" filter-value_type="number" filter-operator="$ne" order-by="menu-position" order-type="asc" pass_to="blocks">
           </div>
   
           <!-- template -->
-          <li data-draggable="true" class="template menuItem" id="header" data-insert-html='{{html}}'>
+          <li draggable="true" class="template menuItem" id="header" cloneable-html='{{html}}'>
             <span collection="" document_id="" name="icon" pass_id="blocks" class="padding-10px"></span>
             <span collection="" document_id="" name="name" pass_id="blocks"></span>
             <div class="float-right">
