@@ -57,8 +57,8 @@ function virtualDomGenerator({ realDom, virtualDom, ignore }) {
     metadata.setAttribute("dnd-exclude", "true");
     // metadata.classList.add('metadata')
 
-    let realDomId = element.getAttribute("data-element_id");
-    treeItem.setAttribute("data-element_id", realDomId);
+    let realDomId = element.getAttribute("element_id");
+    treeItem.setAttribute("element_id", realDomId);
     // let atts = Array.from(element.attributes).filter(att => att.name.startsWith('draggable') || att.name.startsWith('droppable'))
     // atts.forEach(att => {
     //   treeItem.setAttribute(att.name, att.value);
@@ -151,9 +151,9 @@ const vdom = {
 
           if (!el.tagName || el.classList.contains('vdom-item')) return;
 
-          let id = el.getAttribute("data-element_id");
+          let id = el.getAttribute("element_id");
           if (id) {
-            let vd = virtualDom.querySelector(`[data-element_id="${id}"]`);
+            let vd = virtualDom.querySelector(`[element_id="${id}"]`);
             if (vd) vd.remove();
           }
 
@@ -167,27 +167,27 @@ const vdom = {
       callback: (mutation) => {
         let el = mutation.target;
         if (el.classList.contains('vdom-item')) return;
-        let id = el.getAttribute('data-element_id');
+        let id = el.getAttribute('element_id');
         let elVdom = myVirtualDom.renderNew([el]);
         if (!elVdom) return;
-        let vd = virtualDom.querySelector(`[data-element_id="${id}"]`);
+        let vd = virtualDom.querySelector(`[element_id="${id}"]`);
         if (vd)
           vd.replaceWith(elVdom);
 
 
         if (el.previousElementSibling) {
 
-          let id = el.previousElementSibling.getAttribute("data-element_id");
+          let id = el.previousElementSibling.getAttribute("element_id");
           if (!id) return;
-          let sib = virtualDom.querySelector(`[data-element_id="${id}"]`);
+          let sib = virtualDom.querySelector(`[element_id="${id}"]`);
 
 
           sib && sib.insertAdjacentElement('afterend', elVdom)
         }
         else if (el.parentElement) {
-          let id = el.parentElement.getAttribute("data-element_id");
+          let id = el.parentElement.getAttribute("element_id");
           if (!id) return;
-          let sib = virtualDom.querySelector(`[data-element_id="${id}"]`);
+          let sib = virtualDom.querySelector(`[element_id="${id}"]`);
 
 
           sib && sib.insertAdjacentElement('afterbegin', elVdom)
