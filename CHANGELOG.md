@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.1.3...v1.2.0) (2021-08-18)
+
+
+### Features
+
+* reinit when new element is observered ([1617558](https://github.com/CoCreate-app/CoCreate-vdom/commit/1617558b9678e6ae7921b8fbe17e88fa696e6f91))
+
 ## [1.1.3](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.1.2...v1.1.3) (2021-08-14)
 
 
