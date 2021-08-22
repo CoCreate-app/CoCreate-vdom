@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.3...v1.2.4) (2021-08-22)
+
+
+### Bug Fixes
+
+* removed data- from main-content, clone, filter-value_type ([4690892](https://github.com/CoCreate-app/CoCreate-vdom/commit/469089222a7b9ed114ca25a6532cc8c77e408a25))
+
 ## [1.2.3](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.2...v1.2.3) (2021-08-22)
 
 
