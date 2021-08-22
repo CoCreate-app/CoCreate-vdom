@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.1...v1.2.2) (2021-08-22)
+
+
+### Bug Fixes
+
+* bump package versions ([7315047](https://github.com/CoCreate-app/CoCreate-vdom/commit/7315047ad081a00b2a3e3e1f052e191d9ca27120))
+
 ## [1.2.1](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.0...v1.2.1) (2021-08-22)
 
 
