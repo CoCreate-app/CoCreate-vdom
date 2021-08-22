@@ -154,7 +154,7 @@ const vdom = {
 		});
 		let Window = realdom.tagName === 'IFRAME' ? realdom.contentWindow : realdom.ownerDocument.defaultView;
 
-		onLoadorExec(Window, () => {
+		// onLoadorExec(Window, () => {
 
 			Window.CoCreate.observer.init({
 				name: "vdom",
@@ -174,7 +174,7 @@ const vdom = {
 
 				},
 			});
-		})
+		// })
 		Window.CoCreate.observer.init({
 			name: "vdom",
 			// exclude: ".vdom-item",
@@ -218,19 +218,21 @@ const vdom = {
 };
 
 
-function onLoadorExec(Window, callback) {
+// function onLoadorExec(Window, callback) {
 
-	if(Window.document.readyState === "complete")
-		callback()
-	else
-		Window.addEventListener('load', () => {
-			callback
+// 	if(Window.document.readyState === "complete")
+// 		callback()
+// 	else
+// 		Window.addEventListener('load', () => {
+// 			callback
 
-		});
+// 		});
 
-}
+// }
 
-// init();
+
+
+init();
 
 observer.init({
 	name: 'CoCreateVdomAddedNodes',
