@@ -2,14 +2,14 @@ import observer from '@cocreate/observer';
 import './index.css';
 
 
-function init() {
+function initVdom() {
 	let vdomTargets = document.querySelector("[vdom-target]");
 	let vdomRealDom = document.querySelector("[vdom-id]");
 
 	if(vdomTargets && vdomRealDom) {
 		vdomRealDom = vdomRealDom.contentDocument.documentElement;
 		vdomTargets.innerText = "";
-		window.vdomObject = vdom.initVdom({
+		window.vdomObject = vdom.init({
 			realdom: vdomRealDom,
 			virtualDom: vdomTargets,
 			ignore: '#dropMarker, script'
@@ -17,11 +17,80 @@ function init() {
 	}
 }
 
+const vdom = {
+	init: function({ realdom, virtualDom, ignore }) {
+		let myVirtualDom = new virtualDomGenerator({
+			realDom: realdom,
+			virtualDom,
+			ignore
+		});
+		let Window = realdom.tagName === 'IFRAME' ? realdom.contentWindow : realdom.ownerDocument.defaultView;
+
+		if(Window.observer) {
+			Window.observer.init({
+				name: "vdom",
+				observe: ['addedNodes'],
+				target: '[vdom-target]',
+				callback: (mutation) => {
+					if(!mutation.target.tagName) return;
+					let el = mutation.target;
+	
+					if(!el.tagName || el.classList.contains('vdom-item')) return;
+	
+					let id = el.getAttribute("element_id");
+					if(id) {
+						let vd = virtualDom.querySelector(`[element_id="${id}"]`);
+						if(vd) vd.remove();
+					}
+	
+				},
+			});
+	
+			Window.CoCreate.observer.init({
+				name: "vdom",
+				// exclude: ".vdom-item",
+				observe: ["removedNodes"],
+				callback: (mutation) => {
+					let el = mutation.target;
+					if(el.classList.contains('vdom-item')) return;
+					let id = el.getAttribute('element_id');
+					let elVdom = myVirtualDom.renderNew([el]);
+					if(!elVdom) return;
+					let vd = virtualDom.querySelector(`[element_id="${id}"]`);
+					if(vd)
+						vd.replaceWith(elVdom);
+	
+	
+					if(el.previousElementSibling) {
+	
+						let id = el.previousElementSibling.getAttribute("element_id");
+						if(!id) return;
+						let sib = virtualDom.querySelector(`[element_id="${id}"]`);
+	
+	
+						sib && sib.insertAdjacentElement('afterend', elVdom);
+					}
+					else if(el.parentElement) {
+						let id = el.parentElement.getAttribute("element_id");
+						if(!id) return;
+						let sib = virtualDom.querySelector(`[element_id="${id}"]`);
+	
+	
+						sib && sib.insertAdjacentElement('afterbegin', elVdom);
+					}
+				}
+			});
+		}
+		return myVirtualDom;
+	},
+};
+
 function virtualDomGenerator({ realDom, virtualDom, ignore }) {
 
 
 	this.render = function(elList, level = 0, appendDom) {
 		for(let el of elList) {
+			if (!el) continue;
 			if(el.matches(ignore)) continue;
 
 			let virtualEl = this.createVirtualElement({
@@ -31,7 +100,6 @@ function virtualDomGenerator({ realDom, virtualDom, ignore }) {
 			appendDom.append(virtualEl);
 
 			if(el.children.length) {
-				// virtualEl.classList.add('collapsible')
 				this.render(el.children, level + 1, virtualEl);
 			}
 		}
@@ -141,107 +209,17 @@ function virtualDomGenerator({ realDom, virtualDom, ignore }) {
 	this.render([realDom], 0, virtualDom);
 }
 
-/*global DOMParser*/
 
-
-
-const vdom = {
-	initVdom: function({ realdom, virtualDom, ignore }) {
-		let myVirtualDom = new virtualDomGenerator({
-			realDom: realdom,
-			virtualDom,
-			ignore
-		});
-		let Window = realdom.tagName === 'IFRAME' ? realdom.contentWindow : realdom.ownerDocument.defaultView;
-
-		// onLoadorExec(Window, () => {
-
-			Window.CoCreate.observer.init({
-				name: "vdom",
-				observe: ['addedNodes'],
-				target: '[vdom-target]',
-				callback: (mutation) => {
-					if(!mutation.target.tagName) return;
-					let el = mutation.target;
-
-					if(!el.tagName || el.classList.contains('vdom-item')) return;
-
-					let id = el.getAttribute("element_id");
-					if(id) {
-						let vd = virtualDom.querySelector(`[element_id="${id}"]`);
-						if(vd) vd.remove();
-					}
-
-				},
-			});
-		// })
-		Window.CoCreate.observer.init({
-			name: "vdom",
-			// exclude: ".vdom-item",
-			observe: ["removedNodes"],
-			callback: (mutation) => {
-				let el = mutation.target;
-				if(el.classList.contains('vdom-item')) return;
-				let id = el.getAttribute('element_id');
-				let elVdom = myVirtualDom.renderNew([el]);
-				if(!elVdom) return;
-				let vd = virtualDom.querySelector(`[element_id="${id}"]`);
-				if(vd)
-					vd.replaceWith(elVdom);
-
-
-				if(el.previousElementSibling) {
-
-					let id = el.previousElementSibling.getAttribute("element_id");
-					if(!id) return;
-					let sib = virtualDom.querySelector(`[element_id="${id}"]`);
-
-
-					sib && sib.insertAdjacentElement('afterend', elVdom)
-				}
-				else if(el.parentElement) {
-					let id = el.parentElement.getAttribute("element_id");
-					if(!id) return;
-					let sib = virtualDom.querySelector(`[element_id="${id}"]`);
-
-
-					sib && sib.insertAdjacentElement('afterbegin', elVdom)
-				}
-			}
-		})
-
-		return myVirtualDom;
-	},
-
-
-
-};
-
-
-// function onLoadorExec(Window, callback) {
-
-// 	if(Window.document.readyState === "complete")
-// 		callback()
-// 	else
-// 		Window.addEventListener('load', () => {
-// 			callback
-
-// 		});
-
-// }
-
-
-
-init();
+initVdom();
 
 observer.init({
 	name: 'CoCreateVdomAddedNodes',
 	observe: ['addedNodes'],
 	target: '[vdom-target], [vdom-id]',
 	callback(mutation) {
-		init();
+		initVdom();
 	}
 });
 
 
-export default { init, vdom };
+export default { initVdom, vdom };
