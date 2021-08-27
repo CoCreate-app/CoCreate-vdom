@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.5...v1.2.6) (2021-08-27)
+
+
+### Bug Fixes
+
+* element.match not found ([b681361](https://github.com/CoCreate-app/CoCreate-vdom/commit/b681361a1b351c487ae21c33cb0dc2fda649096c))
+
 ## [1.2.5](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.4...v1.2.5) (2021-08-23)
 
 
