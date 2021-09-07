@@ -1,3 +1,10 @@
+## [1.2.10](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.9...v1.2.10) (2021-09-07)
+
+
+### Bug Fixes
+
+* converted to functional programing ([55a3be7](https://github.com/CoCreate-app/CoCreate-vdom/commit/55a3be76e9023102b76bcc27489ced80982fd08d))
+
 ## [1.2.9](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.8...v1.2.9) (2021-09-04)
 
 
