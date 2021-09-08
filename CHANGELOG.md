@@ -1,3 +1,10 @@
+## [1.2.11](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.10...v1.2.11) (2021-09-08)
+
+
+### Bug Fixes
+
+* removed vdom-id ([6a2db2a](https://github.com/CoCreate-app/CoCreate-vdom/commit/6a2db2abc20eb8ded528b63ab24a7ec3668daaaf))
+
 ## [1.2.10](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.9...v1.2.10) (2021-09-07)
 
 
