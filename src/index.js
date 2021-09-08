@@ -5,9 +5,11 @@ let ignore = '#dropMarker, script';
 
 function initVdom() {
 	let virtualDom = document.querySelector("[vdom-target]");
-	let realDom = document.querySelector("[vdom-id]");
+	let selector = virtualDom.getAttribute('vdom-target');
+	if (!selector) return;
+	let realDom = document.querySelector(selector);
 
-	if(virtualDom && realDom) {
+	if(realDom) {
 		virtualDom.innerText = "";
 		initElements(realDom, virtualDom);
 		initObserver(realDom);
@@ -173,8 +175,17 @@ initVdom();
 observer.init({
 	name: 'CoCreateVdomAddedNodes',
 	observe: ['addedNodes'],
-	target: '[vdom-target], [vdom-id]',
+	target: '[vdom-target]',
 	callback(mutation) {
+		initVdom();
+	}
+});
+
+observer.init({
+	name: 'CoCreateVdomAddedNodes',
+	observe: ['attributes'],
+	attributeName: ['vdom-target'],
+	callback: mutation => {
 		initVdom();
 	}
 });
