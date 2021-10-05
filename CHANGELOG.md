@@ -1,3 +1,11 @@
+## [1.2.25](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.24...v1.2.25) (2021-10-05)
+
+
+### Bug Fixes
+
+* update dependencies ([14261d9](https://github.com/CoCreate-app/CoCreate-vdom/commit/14261d93ed5e7958f9431e95c310e9392d0b2c7c))
+* website_id in CoCreate.config ([e7fa530](https://github.com/CoCreate-app/CoCreate-vdom/commit/e7fa53023b066b08d5c3258e05482df73bd183f8))
+
 ## [1.2.24](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.23...v1.2.24) (2021-10-04)
 
 
