@@ -1,7 +1,7 @@
 {
   "name": "@cocreate/vdom",
   "version": "1.2.27",
-  "description": "A simple vdom component in vanilla javascript. Easily configured using HTML5 data-attributes and/or JavaScript API.",
+  "description": "A simple vdom component in vanilla javascript. Easily configured using HTML5 attributes and/or JavaScript API.",
   "keywords": [
     "vdom",
     "cocreate",
