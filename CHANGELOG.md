@@ -1,3 +1,10 @@
+## [1.2.32](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.31...v1.2.32) (2021-10-16)
+
+
+### Bug Fixes
+
+* update socket package to fix bug in docs ([7881d86](https://github.com/CoCreate-app/CoCreate-vdom/commit/7881d869cd87901911ff4be96f4478c75bc3642c))
+
 ## [1.2.31](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.30...v1.2.31) (2021-10-15)
 
 
