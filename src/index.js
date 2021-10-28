@@ -25,17 +25,9 @@ function initObserver(realDom) {
 	    name: 'vDomAddedNodes',
 	    observe: ['addedNodes'],
 	    callback (mutation) {
-			// if(!mutation.target.tagName) return;
 			let el = mutation.target;
-			// let vdom = el.closest('vdom_id');
 			if(!el.tagName || el.classList.contains('vdom-item')) return;
 	
-			let id = el.getAttribute("element_id");
-			if(id) {
-				// let vd = vdom.querySelector(`.vdom-item[element_id="${id}"]`);
-				// if(vd) vd.remove();
-			}
-			// let elVdom = renderNew([el], vdom);
 	    }
 	});
 
@@ -68,24 +60,24 @@ function render(realDom,  virtualDom, level = 0) {
 	}
 }
 
-function renderNew(realDom, virtualDom, level = 0) {
-	let virtualEl;
-	for(let el of realDom) {
-		if(el.matches(ignore)) continue;
+// function renderNew(realDom, virtualDom, level = 0) {
+// 	let virtualEl;
+// 	for(let el of realDom) {
+// 		if(el.matches(ignore)) continue;
 
-		virtualEl = createVirtualElement({
-			element: el,
-		});
+// 		virtualEl = createVirtualElement({
+// 			element: el,
+// 		});
 
-		if(el.children.length) {
-			// virtualEl.classList.add('collapsible')
-			renderNew(el.children, virtualEl, level + 1);
-		}
-		if(virtualDom) virtualDom.append(virtualEl);
-	}
+// 		if(el.children.length) {
+// 			// virtualEl.classList.add('collapsible')
+// 			renderNew(el.children, virtualEl, level + 1);
+// 		}
+// 		if(virtualDom) virtualDom.append(virtualEl);
+// 	}
 
-	return virtualEl;
-}
+// 	return virtualEl;
+// }
 
 
 function createVirtualElement({ options, element }) {
@@ -102,14 +94,9 @@ function createVirtualElement({ options, element }) {
 	let metadata = document.createElement("div");
 
 	metadata.setAttribute("dnd-exclude", "true");
-	// metadata.classList.add('metadata')
 
-	let realDomId = element.getAttribute("element_id");
-	treeItem.setAttribute("element_id", realDomId);
-	// let atts = Array.from(element.attributes).filter(att => att.name.startsWith('draggable') || att.name.startsWith('droppable'))
-	// atts.forEach(att => {
-	//   treeItem.setAttribute(att.name, att.value);
-	// })
+	treeItem['domElement'] = element;
+
 	treeItem.setAttribute("draggable", "true");
 	treeItem.setAttribute("droppable", "true");
 
@@ -148,7 +135,6 @@ function createVirtualElement({ options, element }) {
 		metadata.append(collapse);
 		down.setAttribute("toggle", "collapse");
 		down.setAttribute("toggle-closest", ".vdom-item");
-		// down.setAttribute("data-transform_to", "fa fa-caret-right");
 	}
 
 	metadata.append(text2);
@@ -170,6 +156,8 @@ function createFAIcon({ name, event }) {
 	return icon;
 }
 
+// ToDo: Use dnd onDrop to get the treeItems.domELement to drag and drop in realDom
+
 initVdom();
 
 observer.init({
@@ -189,62 +177,5 @@ observer.init({
 		initVdom();
 	}
 });
-
-// observer.init({
-// 	name: "vdom",
-// 	observe: ['addedNodes'],
-// 	target: '[vdom-target]',
-// 	callback: (mutation) => {
-// 		if(!mutation.target.tagName) return;
-// 		let el = mutation.target;
-// 		let vdom = el.closest('vdom_id');
-// 		if(!el.tagName || el.classList.contains('vdom-item')) return;
-
-// 		let id = el.getAttribute("element_id");
-// 		if(id) {
-// 			let vd = vdom.querySelector(`[element_id="${id}"]`);
-// 			if(vd) vd.remove();
-// 		}
-
-// 	},
-// });
-
-// observer.init({
-// 	name: "vdom",
-// 	// exclude: ".vdom-item",
-// 	observe: ["removedNodes"],
-// 	callback: (mutation) => {
-// 		let el = mutation.target;
-// 		let vdom = el.closest('vdom_id');
-// 		if (!vdom) return;
-// 		if(el.classList.contains('vdom-item')) return;
-// 		let id = el.getAttribute('element_id');
-// 		let elVdom = renderNew([el], vdom);
-// 		if(!elVdom) return;
-// 		let vd = vdom.querySelector(`[element_id="${id}"]`);
-// 		if(vd)
-// 			vd.replaceWith(elVdom);
-
-
-// 		if(el.previousElementSibling) {
-
-// 			let id = el.previousElementSibling.getAttribute("element_id");
-// 			if(!id) return;
-// 			let sib = vdom.querySelector(`[element_id="${id}"]`);
-
-
-// 			sib && sib.insertAdjacentElement('afterend', elVdom);
-// 		}
-// 		else if(el.parentElement) {
-// 			let id = el.parentElement.getAttribute("element_id");
-// 			if(!id) return;
-// 			let sib = vdom.querySelector(`[element_id="${id}"]`);
-
-
-// 			sib && sib.insertAdjacentElement('afterbegin', elVdom);
-// 		}
-// 	}
-// });
-
 
 export default { initVdom };
