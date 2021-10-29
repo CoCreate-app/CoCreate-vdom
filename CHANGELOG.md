@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.33...v1.3.0) (2021-10-29)
+
+
+### Features
+
+* removed the need for element_id ([5c992bc](https://github.com/CoCreate-app/CoCreate-vdom/commit/5c992bc4a4272ad4fba00eb4a3efd9ee2942b81d))
+
 ## [1.2.33](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.2.32...v1.2.33) (2021-10-17)
 
 
