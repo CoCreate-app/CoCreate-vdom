@@ -1,3 +1,10 @@
+## [1.3.15](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.14...v1.3.15) (2021-11-27)
+
+
+### Bug Fixes
+
+* update docs api and cocreateJS script ([cb196e8](https://github.com/CoCreate-app/CoCreate-vdom/commit/cb196e803bc807bbe5d83712d07e8ab8ca616550))
+
 ## [1.3.14](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.13...v1.3.14) (2021-11-26)
 
 
