@@ -1,3 +1,10 @@
+## [1.3.20](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.19...v1.3.20) (2022-01-01)
+
+
+### Bug Fixes
+
+* removed data- from attributes ([32a7997](https://github.com/CoCreate-app/CoCreate-vdom/commit/32a799716d61a14f861df297481ecbdd49aff07b))
+
 ## [1.3.19](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.18...v1.3.19) (2021-12-15)
 
 
