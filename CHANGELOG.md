@@ -1,3 +1,10 @@
+## [1.3.22](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.21...v1.3.22) (2022-02-01)
+
+
+### Bug Fixes
+
+* update dependency versions ([6c17b10](https://github.com/CoCreate-app/CoCreate-vdom/commit/6c17b10ccfc2f69d4c543466604b7018276a009a))
+
 ## [1.3.21](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.20...v1.3.21) (2022-01-01)
 
 
