@@ -1,3 +1,10 @@
+## [1.3.23](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.22...v1.3.23) (2022-02-03)
+
+
+### Bug Fixes
+
+* replaced show and hide class hidden with attribute hidden ([97adbc2](https://github.com/CoCreate-app/CoCreate-vdom/commit/97adbc277b38405afe6af2c4f86d4e1096dfb149))
+
 ## [1.3.22](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.21...v1.3.22) (2022-02-01)
 
 
