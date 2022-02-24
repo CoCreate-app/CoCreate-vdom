@@ -1,3 +1,10 @@
+## [1.3.27](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.26...v1.3.27) (2022-02-24)
+
+
+### Bug Fixes
+
+* CoCreate.config replace CoCreate.app with * ([a609eaa](https://github.com/CoCreate-app/CoCreate-vdom/commit/a609eaa2160deec988c63348b14e5b3a531b37a5))
+
 ## [1.3.26](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.25...v1.3.26) (2022-02-16)
 
 
