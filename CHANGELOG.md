@@ -1,3 +1,10 @@
+## [1.3.28](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.27...v1.3.28) (2022-03-21)
+
+
+### Bug Fixes
+
+* update class sortable to attribute sortable ([fa50b1e](https://github.com/CoCreate-app/CoCreate-vdom/commit/fa50b1e93a0373077a63a964f42ef79fc1492123))
+
 ## [1.3.27](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.26...v1.3.27) (2022-02-24)
 
 
