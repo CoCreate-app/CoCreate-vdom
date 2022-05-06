@@ -1,3 +1,10 @@
+## [1.3.29](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.28...v1.3.29) (2022-05-06)
+
+
+### Bug Fixes
+
+* update config organization_Id to organization_id ([040b556](https://github.com/CoCreate-app/CoCreate-vdom/commit/040b556e2e4435b7fad7bb3a072ab02893c9e230))
+
 ## [1.3.28](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.27...v1.3.28) (2022-03-21)
 
 
