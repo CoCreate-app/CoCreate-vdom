@@ -1,3 +1,10 @@
+## [1.3.30](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.29...v1.3.30) (2022-05-19)
+
+
+### Bug Fixes
+
+* update document_id on link index.css ([5875248](https://github.com/CoCreate-app/CoCreate-vdom/commit/5875248ec6f150d204a95572e582e7e02bf5f42f))
+
 ## [1.3.29](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.28...v1.3.29) (2022-05-06)
 
 
