@@ -1,3 +1,10 @@
+## [1.3.40](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.39...v1.3.40) (2022-10-02)
+
+
+### Bug Fixes
+
+* bump @cocreate/hosting and @cocreate/socket-client ([7addd18](https://github.com/CoCreate-app/CoCreate-vdom/commit/7addd18b79522daa63ab244c519e9dfb0981c0e5))
+
 ## [1.3.39](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.38...v1.3.39) (2022-10-01)
 
 
