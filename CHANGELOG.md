@@ -1,3 +1,10 @@
+## [1.3.44](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.43...v1.3.44) (2022-11-21)
+
+
+### Bug Fixes
+
+* replaced document_id with document._id ([cf0a4ad](https://github.com/CoCreate-app/CoCreate-vdom/commit/cf0a4ade7931a65f111d79af0ab7ef062d3a5ded))
+
 ## [1.3.43](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.42...v1.3.43) (2022-11-21)
 
 
