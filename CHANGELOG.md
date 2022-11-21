@@ -1,3 +1,10 @@
+## [1.3.45](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.44...v1.3.45) (2022-11-21)
+
+
+### Bug Fixes
+
+* @cocreate/docs bug fix ([d79c4e2](https://github.com/CoCreate-app/CoCreate-vdom/commit/d79c4e248815c31cb90289b2c30ad353ea0cb0cf))
+
 ## [1.3.44](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.43...v1.3.44) (2022-11-21)
 
 
