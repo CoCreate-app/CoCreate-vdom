@@ -1,3 +1,11 @@
+## [1.3.46](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.45...v1.3.46) (2022-11-22)
+
+
+### Bug Fixes
+
+* apply src: {{source}} to CoCreate.config ([24c44c0](https://github.com/CoCreate-app/CoCreate-vdom/commit/24c44c0892586d74b9d7ba278f655d2935e9dd6d))
+* workflow docs ([b2251c2](https://github.com/CoCreate-app/CoCreate-vdom/commit/b2251c2fbb608a69a9c3d7c93621f322e169fea1))
+
 ## [1.3.45](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.44...v1.3.45) (2022-11-21)
 
 
