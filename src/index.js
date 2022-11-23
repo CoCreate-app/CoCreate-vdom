@@ -9,7 +9,7 @@ function initVdom() {
 	if (!selector) return;
 	let realDom = document.querySelector(selector);
 
-	if(realDom) {
+	if (realDom) {
 		virtualDom.innerText = "";
 		initElements(realDom, virtualDom);
 		initObserver(realDom);
@@ -26,7 +26,7 @@ function initObserver(realDom) {
 	    observe: ['addedNodes'],
 	    callback (mutation) {
 			let el = mutation.target;
-			if(!el.tagName || el.classList.contains('vdom-item')) return;
+			if (!el.tagName || el.classList.contains('vdom-item')) return;
 	
 	    }
 	});
@@ -46,7 +46,7 @@ function initElements(realDom,  virtualDom) {
 function render(realDom,  virtualDom, level = 0) {
 	for(let el of realDom) {
 		if (!el) continue;
-		if(el.matches(ignore)) continue;
+		if (el.matches(ignore)) continue;
 
 		let virtualEl = createVirtualElement({
 			element: el,
@@ -54,7 +54,7 @@ function render(realDom,  virtualDom, level = 0) {
 
 		virtualDom.append(virtualEl);
 
-		if(el.children.length) {
+		if (el.children.length) {
 			render(el.children, virtualEl, level + 1);
 		}
 	}
@@ -63,17 +63,17 @@ function render(realDom,  virtualDom, level = 0) {
 // function renderNew(realDom, virtualDom, level = 0) {
 // 	let virtualEl;
 // 	for(let el of realDom) {
-// 		if(el.matches(ignore)) continue;
+// 		if (el.matches(ignore)) continue;
 
 // 		virtualEl = createVirtualElement({
 // 			element: el,
 // 		});
 
-// 		if(el.children.length) {
+// 		if (el.children.length) {
 // 			// virtualEl.classList.add('collapsible')
 // 			renderNew(el.children, virtualEl, level + 1);
 // 		}
-// 		if(virtualDom) virtualDom.append(virtualEl);
+// 		if (virtualDom) virtualDom.append(virtualEl);
 // 	}
 
 // 	return virtualEl;
@@ -89,7 +89,7 @@ function createVirtualElement({ options, element }) {
 	let isParent = element.children.length;
 
 	treeItem.classList.add("vdom-item");
-	if(element.children.length) treeItem.classList.add("parent");
+	if (element.children.length) treeItem.classList.add("parent");
 
 	let metadata = document.createElement("div");
 
@@ -109,7 +109,7 @@ function createVirtualElement({ options, element }) {
 		name: "fa-eye",
 		event: {
 			click: (e) => {
-				if(element.style.display == "none") {
+				if (element.style.display == "none") {
 					element.style.display = lastDisplay;
 					treeItem.classList.remove("layer-hidden");
 				}
@@ -125,7 +125,7 @@ function createVirtualElement({ options, element }) {
 
 	metadata.append(eye);
 
-	if(isParent) {
+	if (isParent) {
 		let down = createFAIcon({ name: "fa-caret-down" });
 		let collapse = document.createElement("span");
 		collapse.insertAdjacentElement("afterbegin", down);
@@ -148,7 +148,7 @@ function createFAIcon({ name, event }) {
 	icon.classList.add("fa");
 	icon.classList.add(name);
 
-	if(event) {
+	if (event) {
 		let eventType = Object.keys(event)[0];
 		let func = event[eventType];
 		icon.addEventListener(eventType, func);
