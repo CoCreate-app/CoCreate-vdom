@@ -1,3 +1,10 @@
+## [1.3.53](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.52...v1.3.53) (2022-11-28)
+
+
+### Bug Fixes
+
+* bump dependencies ([9aff930](https://github.com/CoCreate-app/CoCreate-vdom/commit/9aff9304be003c7aa132cd5f5ae32273d41b1c14))
+
 ## [1.3.52](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.51...v1.3.52) (2022-11-28)
 
 
