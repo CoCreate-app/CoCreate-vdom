@@ -12,36 +12,36 @@ function initVdom() {
 	if (realDom) {
 		virtualDom.innerText = "";
 		initElements(realDom, virtualDom);
-		initObserver(realDom);
+		// initObserver(realDom);
 	}
 }
 
-function initObserver(realDom) {
-	let Document = document;
-	if (realDom.contentWindow) {
-		Document = realDom.contentDocument;
-	}
-	Document.observer = observer.init({
-	    name: 'vDomAddedNodes',
-	    observe: ['addedNodes'],
-	    callback (mutation) {
-			let el = mutation.target;
-			if (!el.tagName || el.classList.contains('vdom-item')) return;
+// function initObserver(realDom) {
+// 	let Document = document;
+// 	if (realDom.contentWindow) {
+// 		Document = realDom.contentDocument;
+// 	}
+// 	Document.observer = observer.init({
+// 	    name: 'vDomAddedNodes',
+// 	    observe: ['addedNodes'],
+// 	    callback (mutation) {
+// 			let el = mutation.target;
+// 			if (!el.tagName || el.classList.contains('vdom-item')) return;
 	
-	    }
-	});
+// 	    }
+// 	});
 
-}
+// }
 
 async function initElements(realDom,  virtualDom) {
-	if (realDom.contentWindow) {
+	if (realDom.contentWindow)
 		realDom = realDom.contentDocument.children;
-	}
-	else {
+	else
 		realDom = realDom.children;	
-	}
 
 	let virtual = document.createElement("div");
+	console.log('starting------->')
+
 	let element = await render(realDom, virtual);
 	console.log('------->', element.innerHTML)
 	virtualDom.innerHTML = element.innerHTML;
