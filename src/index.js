@@ -33,17 +33,20 @@ function initObserver(realDom) {
 
 }
 
-function initElements(realDom,  virtualDom) {
+async function initElements(realDom,  virtualDom) {
 	if (realDom.contentWindow) {
 		realDom = realDom.contentDocument.children;
 	}
 	else {
 		realDom = realDom.children;	
 	}
-		render(realDom,	virtualDom);
+
+	let virtual = document.createElement("div");
+	await render(realDom, virtual);
+	virtualDom.innerHTML = virtual.innerHTML;
 }
 
-function render(realDom,  virtualDom, level = 0) {
+async function render(realDom, virtualDom, level = 0) {
 	for(let el of realDom) {
 		if (!el) continue;
 		if (el.matches(ignore)) continue;
@@ -55,30 +58,11 @@ function render(realDom,  virtualDom, level = 0) {
 		virtualDom.append(virtualEl);
 
 		if (el.children.length) {
-			render(el.children, virtualEl, level + 1);
+			await render(el.children, virtualEl, level + 1);
 		}
 	}
+	return virtualDom
 }
-
-// function renderNew(realDom, virtualDom, level = 0) {
-// 	let virtualEl;
-// 	for(let el of realDom) {
-// 		if (el.matches(ignore)) continue;
-
-// 		virtualEl = createVirtualElement({
-// 			element: el,
-// 		});
-
-// 		if (el.children.length) {
-// 			// virtualEl.classList.add('collapsible')
-// 			renderNew(el.children, virtualEl, level + 1);
-// 		}
-// 		if (virtualDom) virtualDom.append(virtualEl);
-// 	}
-
-// 	return virtualEl;
-// }
-
 
 function createVirtualElement({ options, element }) {
 	let treeItem = document.createElement("div");
