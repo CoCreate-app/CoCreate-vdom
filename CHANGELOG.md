@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.4.0...v1.4.1) (2022-12-09)
+
+
+### Bug Fixes
+
+* added a console.log to check when compiled ([dd35b01](https://github.com/CoCreate-app/CoCreate-vdom/commit/dd35b015d6e00ba44a4b9d0513df37c1aac57c8d))
+
 # [1.4.0](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.59...v1.4.0) (2022-12-09)
 
 
