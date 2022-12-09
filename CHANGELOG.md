@@ -1,3 +1,10 @@
+## [1.3.59](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.58...v1.3.59) (2022-12-09)
+
+
+### Bug Fixes
+
+* await vitualDom and apply when render is completed ([68828bc](https://github.com/CoCreate-app/CoCreate-vdom/commit/68828bc7a12697798cd5aafd51c7a8023af8047a))
+
 ## [1.3.58](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.57...v1.3.58) (2022-12-09)
 
 
