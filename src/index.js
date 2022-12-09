@@ -42,9 +42,9 @@ async function initElements(realDom,  virtualDom) {
 	}
 
 	let virtual = document.createElement("div");
-	await render(realDom, virtual);
-	console.log('------->', virtual.innerHTML)
-	// virtualDom.innerHTML = virtual.innerHTML;
+	let element = await render(realDom, virtual);
+	console.log('------->', element.innerHTML)
+	virtualDom.innerHTML = element.innerHTML;
 }
 
 async function render(realDom, virtualDom, level = 0) {
