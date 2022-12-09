@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.59...v1.4.0) (2022-12-09)
+
+
+### Features
+
+* improved renedierng and performance ([02ebecf](https://github.com/CoCreate-app/CoCreate-vdom/commit/02ebecf723fb2bc689951c67421e35534c0e8b11))
+
 ## [1.3.59](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.3.58...v1.3.59) (2022-12-09)
 
 
