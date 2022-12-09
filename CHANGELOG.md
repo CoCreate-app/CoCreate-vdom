@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.4.2...v1.4.3) (2022-12-09)
+
+
+### Bug Fixes
+
+* commented observer ([94192cc](https://github.com/CoCreate-app/CoCreate-vdom/commit/94192cc880fa2332fb72d5209e885fdb9f31ab1b))
+
 ## [1.4.2](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.4.1...v1.4.2) (2022-12-09)
 
 
