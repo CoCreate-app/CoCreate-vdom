@@ -10,7 +10,6 @@ function initVdom() {
 	let realDom = document.querySelector(selector);
 
 	if (realDom) {
-		virtualDom.innerText = "";
 		initElements(realDom, virtualDom);
 		// initObserver(realDom);
 	}
@@ -40,10 +39,7 @@ async function initElements(realDom,  virtualDom) {
 		realDom = realDom.children;	
 
 	let virtual = document.createElement("div");
-	console.log('starting------->')
-
 	let element = await render(realDom, virtual);
-	console.log('------->', element.innerHTML)
 	virtualDom.innerHTML = element.innerHTML;
 }
 
@@ -155,10 +151,10 @@ observer.init({
 });
 
 observer.init({
-	name: 'CoCreateVdomAddedNodes',
+	name: 'CoCreateVdomAttributesNodes',
 	observe: ['attributes'],
 	attributeName: ['vdom-target'],
-	callback: mutation => {
+	callback(mutation) {
 		initVdom();
 	}
 });
