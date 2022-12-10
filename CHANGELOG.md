@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.4.3...v1.4.4) (2022-12-10)
+
+
+### Bug Fixes
+
+* added correct name to observer ([8950c2f](https://github.com/CoCreate-app/CoCreate-vdom/commit/8950c2f821cb1019d7c33dfe559e70f8504fd80b))
+
 ## [1.4.3](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.4.2...v1.4.3) (2022-12-09)
 
 
