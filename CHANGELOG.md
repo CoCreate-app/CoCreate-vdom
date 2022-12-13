@@ -1,3 +1,10 @@
+## [1.4.8](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.4.7...v1.4.8) (2022-12-13)
+
+
+### Bug Fixes
+
+* removed un used devDependencies ([9c6f64a](https://github.com/CoCreate-app/CoCreate-vdom/commit/9c6f64ace3e7844732dfc97daed90145de1317e8))
+
 ## [1.4.7](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.4.6...v1.4.7) (2022-12-13)
 
 
