@@ -1,3 +1,10 @@
+## [1.4.7](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.4.6...v1.4.7) (2022-12-13)
+
+
+### Bug Fixes
+
+* bump dependencies ([a0a0aeb](https://github.com/CoCreate-app/CoCreate-vdom/commit/a0a0aeb0f7c742b137736e2f6c704b76c3cccdcc))
+
 ## [1.4.6](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.4.5...v1.4.6) (2022-12-12)
 
 
