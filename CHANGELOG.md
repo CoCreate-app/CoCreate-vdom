@@ -1,3 +1,10 @@
+## [1.4.9](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.4.8...v1.4.9) (2022-12-15)
+
+
+### Bug Fixes
+
+* add missing dev dependency style-loader ([f1e3077](https://github.com/CoCreate-app/CoCreate-vdom/commit/f1e3077a888c229cbaa3c633f424783109658f96))
+
 ## [1.4.8](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.4.7...v1.4.8) (2022-12-13)
 
 
