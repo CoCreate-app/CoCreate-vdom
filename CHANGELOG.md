@@ -1,3 +1,10 @@
+## [1.4.18](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.4.17...v1.4.18) (2022-12-30)
+
+
+### Bug Fixes
+
+* update config sources to use template  braces with entry on src ([a01f9cb](https://github.com/CoCreate-app/CoCreate-vdom/commit/a01f9cb3a25dc7beefe8a48583fad38d51d1e291))
+
 ## [1.4.17](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.4.16...v1.4.17) (2022-12-29)
 
 
