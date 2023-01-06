@@ -1,3 +1,11 @@
+## [1.4.22](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.4.21...v1.4.22) (2023-01-06)
+
+
+### Bug Fixes
+
+* bump dependencies, worklow [@v3](https://github.com/v3) ([f4bbf02](https://github.com/CoCreate-app/CoCreate-vdom/commit/f4bbf02db4fb97f43053cea98c3f2629f9023531))
+* edit in github btn styles ([e82553b](https://github.com/CoCreate-app/CoCreate-vdom/commit/e82553ba7d872393e9a306bdc061243ae77ae42b))
+
 ## [1.4.21](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.4.20...v1.4.21) (2023-01-05)
 
 
