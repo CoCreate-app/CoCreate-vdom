@@ -1,3 +1,10 @@
+## [1.5.4](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.5.3...v1.5.4) (2023-04-11)
+
+
+### Bug Fixes
+
+* renamed domains to hosts ([47305f1](https://github.com/CoCreate-app/CoCreate-vdom/commit/47305f1c9a53e26dfe562befbef82ac02f8e1ee0))
+
 ## [1.5.3](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.5.2...v1.5.3) (2023-03-30)
 
 
