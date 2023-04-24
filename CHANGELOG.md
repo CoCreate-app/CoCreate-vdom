@@ -1,3 +1,11 @@
+## [1.6.3](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.2...v1.6.3) (2023-04-24)
+
+
+### Bug Fixes
+
+* updated worrkflows to v3 and node version 16 ([344b301](https://github.com/CoCreate-app/CoCreate-vdom/commit/344b301994396449c59172813c745a583d05f228))
+* workflow node version updated  16 ([827c462](https://github.com/CoCreate-app/CoCreate-vdom/commit/827c46287cf6c2871efbd43f2c8f62b6945680cd))
+
 ## [1.6.2](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.1...v1.6.2) (2023-04-24)
 
 
