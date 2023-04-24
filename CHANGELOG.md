@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.5.6...v1.6.0) (2023-04-24)
+
+
+### Features
+
+* added pwa manifest ([5a42eb8](https://github.com/CoCreate-app/CoCreate-vdom/commit/5a42eb870684065a5a61cf9bc4198b53110f2e09))
+
 ## [1.5.6](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.5.5...v1.5.6) (2023-04-11)
 
 
