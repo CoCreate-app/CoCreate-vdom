@@ -1,3 +1,10 @@
+## [1.6.6](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.5...v1.6.6) (2023-05-01)
+
+
+### Bug Fixes
+
+* update manifest.json to manifest.webmanifest ([50d5dd4](https://github.com/CoCreate-app/CoCreate-vdom/commit/50d5dd47dc3b4aaab40c7e6ae99d651f91d22679))
+
 ## [1.6.5](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.4...v1.6.5) (2023-05-01)
 
 
