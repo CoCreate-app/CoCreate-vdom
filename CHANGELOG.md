@@ -1,3 +1,10 @@
+## [1.6.7](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.6...v1.6.7) (2023-05-02)
+
+
+### Bug Fixes
+
+* if no element found return ([50cf7c5](https://github.com/CoCreate-app/CoCreate-vdom/commit/50cf7c575bf5e6753e423eaef9d3c65de4a222bf))
+
 ## [1.6.6](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.5...v1.6.6) (2023-05-01)
 
 
