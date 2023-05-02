@@ -5,6 +5,7 @@ let ignore = '#dropMarker, script';
 
 function initVdom() {
 	let virtualDom = document.querySelector("[vdom-target]");
+	if (!virtualDom) return
 	let selector = virtualDom.getAttribute('vdom-target');
 	if (!selector) return;
 	let realDom = document.querySelector(selector);
