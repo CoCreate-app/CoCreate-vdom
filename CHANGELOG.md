@@ -1,3 +1,10 @@
+## [1.6.9](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.8...v1.6.9) (2023-05-10)
+
+
+### Bug Fixes
+
+* apikey renamed to key ([a979a6f](https://github.com/CoCreate-app/CoCreate-vdom/commit/a979a6f6a720e37a2f864c7eb880d295c9ca8a45))
+
 ## [1.6.8](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.7...v1.6.8) (2023-05-06)
 
 
