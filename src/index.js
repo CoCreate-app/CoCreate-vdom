@@ -138,7 +138,7 @@ function createFAIcon({ name, event }) {
 	return icon;
 }
 
-// ToDo: Use dnd onDrop to get the treeItems.domELement to drag and drop in realDom
+// TODO: Use dnd onDrop to get the treeItems.domELement to drag and drop in realDom
 
 initVdom();
 
