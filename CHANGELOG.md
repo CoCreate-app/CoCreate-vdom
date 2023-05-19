@@ -1,3 +1,10 @@
+## [1.6.10](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.9...v1.6.10) (2023-05-19)
+
+
+### Bug Fixes
+
+* update packages to latest version. This commit updates various packages in the dependencies section of the package.json file to their latest published versions, thereby fixing multiple bugs and improving overall performance. ([0fe94b9](https://github.com/CoCreate-app/CoCreate-vdom/commit/0fe94b950e00ae0dcf3b1f3e40d414927a5d6e31))
+
 ## [1.6.9](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.8...v1.6.9) (2023-05-10)
 
 
