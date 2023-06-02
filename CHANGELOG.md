@@ -1,3 +1,11 @@
+## [1.6.12](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.11...v1.6.12) (2023-06-02)
+
+
+### Bug Fixes
+
+* format demo html ([d28d759](https://github.com/CoCreate-app/CoCreate-vdom/commit/d28d759892780ea0f33f6768b5bef9deb0a61852))
+* Update dependencies versions for [@cocreate](https://github.com/cocreate) libraries ([d7c56a8](https://github.com/CoCreate-app/CoCreate-vdom/commit/d7c56a8f866c926b3e77cc343e18b7a81312b92c))
+
 ## [1.6.11](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.10...v1.6.11) (2023-05-21)
 
 
