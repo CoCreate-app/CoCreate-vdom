@@ -1,3 +1,10 @@
+## [1.6.13](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.12...v1.6.13) (2023-06-04)
+
+
+### Bug Fixes
+
+* **semantic-release:** worklow error solved by running node version 14 ([15dcc7e](https://github.com/CoCreate-app/CoCreate-vdom/commit/15dcc7eb4f1e558c832bd5ebea597b46afad49c1))
+
 ## [1.6.12](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.11...v1.6.12) (2023-06-02)
 
 
