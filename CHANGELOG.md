@@ -1,3 +1,11 @@
+## [1.6.14](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.13...v1.6.14) (2023-06-04)
+
+
+### Bug Fixes
+
+* replaced secert GITHUB_TOKEN with GITHUB ([eda7c6f](https://github.com/CoCreate-app/CoCreate-vdom/commit/eda7c6f1cf1c89661d2be2f72a4bbc663b071583))
+* Update dependencies versions for [@cocreate](https://github.com/cocreate) libraries ([0bb825e](https://github.com/CoCreate-app/CoCreate-vdom/commit/0bb825e17fe4d00756a83625797baabe301f25ac))
+
 ## [1.6.13](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.12...v1.6.13) (2023-06-04)
 
 
