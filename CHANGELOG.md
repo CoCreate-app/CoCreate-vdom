@@ -1,3 +1,10 @@
+## [1.6.21](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.20...v1.6.21) (2023-06-11)
+
+
+### Bug Fixes
+
+* postintall error ([bcaed4e](https://github.com/CoCreate-app/CoCreate-vdom/commit/bcaed4e9dfd8bfdf34a4ecf3ef7fa63731de738c))
+
 ## [1.6.20](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.19...v1.6.20) (2023-06-11)
 
 
