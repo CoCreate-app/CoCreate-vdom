@@ -1,3 +1,10 @@
+## [1.6.20](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.19...v1.6.20) (2023-06-11)
+
+
+### Bug Fixes
+
+* @cocreate/cli moved to dependencies ([3f0d06a](https://github.com/CoCreate-app/CoCreate-vdom/commit/3f0d06abfbf1c8601b0b36a0a92b1e2c0ee5b926))
+
 ## [1.6.19](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.18...v1.6.19) (2023-06-11)
 
 
