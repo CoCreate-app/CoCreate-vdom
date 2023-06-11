@@ -1,3 +1,10 @@
+## [1.6.23](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.22...v1.6.23) (2023-06-11)
+
+
+### Bug Fixes
+
+* testing workflow ([e28c337](https://github.com/CoCreate-app/CoCreate-vdom/commit/e28c337584f604935db942290a4573e987e8b5a5))
+
 ## [1.6.22](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.21...v1.6.22) (2023-06-11)
 
 
