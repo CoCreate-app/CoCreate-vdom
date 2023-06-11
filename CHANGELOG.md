@@ -1,3 +1,10 @@
+## [1.6.22](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.21...v1.6.22) (2023-06-11)
+
+
+### Bug Fixes
+
+* Update dependencies versions for [@cocreate](https://github.com/cocreate) libraries ([549e347](https://github.com/CoCreate-app/CoCreate-vdom/commit/549e3478b3858c2cf595dd37172bf8adffb0183b))
+
 ## [1.6.21](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.20...v1.6.21) (2023-06-11)
 
 
