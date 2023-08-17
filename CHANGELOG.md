@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.7.0...v1.8.0) (2023-08-17)
+
+
+### Features
+
+* bump cocreate dependencies for the latest updates and features ([fa4facb](https://github.com/CoCreate-app/CoCreate-vdom/commit/fa4facbefe7937a0460e6ee74166731c18887146))
+
 # [1.7.0](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.6.29...v1.7.0) (2023-08-16)
 
 
