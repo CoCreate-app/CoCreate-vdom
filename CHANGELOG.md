@@ -1,3 +1,12 @@
+## [1.8.1](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.8.0...v1.8.1) (2023-08-21)
+
+
+### Bug Fixes
+
+* /dist/CoCreate.js updated to https://CoCreate.app/dist/CoCreate.js ([d481f3a](https://github.com/CoCreate-app/CoCreate-vdom/commit/d481f3a051265162e460f85907c4b7658cefff44))
+* replace cdn with /dist ([8b7b4df](https://github.com/CoCreate-app/CoCreate-vdom/commit/8b7b4df4edb50e80fdc5eaa1ac03e53ca09f957b))
+* update file uploader ([fc6da9d](https://github.com/CoCreate-app/CoCreate-vdom/commit/fc6da9d8ca86f4237b2c40460cd04e487d025af2))
+
 # [1.8.0](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.7.0...v1.8.0) (2023-08-17)
 
 
