@@ -1,3 +1,11 @@
+## [1.9.2](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.9.1...v1.9.2) (2023-09-18)
+
+
+### Bug Fixes
+
+*  Add path and pathname ([ce07f0a](https://github.com/CoCreate-app/CoCreate-vdom/commit/ce07f0a6e2425eb5235162f5b0a0e842a4bd6070))
+* Update CoCreate depndencies to latest versions ([dfe76ae](https://github.com/CoCreate-app/CoCreate-vdom/commit/dfe76ae4c83e3a85a085920b7d35ceb62a83083b))
+
 ## [1.9.1](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.9.0...v1.9.1) (2023-08-21)
 
 
