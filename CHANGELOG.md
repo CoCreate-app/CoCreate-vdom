@@ -1,3 +1,11 @@
+## [1.9.7](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.9.6...v1.9.7) (2023-11-03)
+
+
+### Bug Fixes
+
+* favicon.ico path ([cbf8e7c](https://github.com/CoCreate-app/CoCreate-vdom/commit/cbf8e7c77c4ae3d7a33352b33e850b48846fa289))
+* update dependencies to the lates versions ([73f1f90](https://github.com/CoCreate-app/CoCreate-vdom/commit/73f1f90d7977510bb12dfe64799bbc20ca8dcf07))
+
 ## [1.9.6](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.9.5...v1.9.6) (2023-10-25)
 
 
