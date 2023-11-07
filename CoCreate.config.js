@@ -12,8 +12,7 @@ module.exports = {
                 "pathname": "/docs/vdom/index.html",
                 "src": "{{./docs/index.html}}",
                 "host": [
-                    "*",
-                    "general.cocreate.app"
+                    "*"
                 ],
                 "directory": "vdom",
                 "content-type": "{{content-type}}",
