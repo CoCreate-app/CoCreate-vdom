@@ -1,3 +1,11 @@
+## [1.9.8](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.9.7...v1.9.8) (2023-11-09)
+
+
+### Bug Fixes
+
+* meta name typo ([3521ea0](https://github.com/CoCreate-app/CoCreate-vdom/commit/3521ea0e5cb758ec49cbb00cb8d39aca715d3cc5))
+* update host ([30efbe5](https://github.com/CoCreate-app/CoCreate-vdom/commit/30efbe5788426a85aa678319c03ebd95929bbfc7))
+
 ## [1.9.7](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.9.6...v1.9.7) (2023-11-03)
 
 
