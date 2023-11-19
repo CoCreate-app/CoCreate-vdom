@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.9.9...v1.10.0) (2023-11-19)
+
+
+### Features
+
+* update dependecies for th latest features and bug fixes ([0899874](https://github.com/CoCreate-app/CoCreate-vdom/commit/0899874938478ef824cb1bbf0389eabe4477931c))
+
 ## [1.9.9](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.9.8...v1.9.9) (2023-11-12)
 
 
