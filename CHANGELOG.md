@@ -1,3 +1,15 @@
+# [1.11.0](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.10.0...v1.11.0) (2023-11-25)
+
+
+### Bug Fixes
+
+* update nav, edit button and css path ([c929567](https://github.com/CoCreate-app/CoCreate-vdom/commit/c9295671c515b5e5e96c0a9d424111918d0201c1))
+
+
+### Features
+
+* upgrade dependencies for latest features and fixes ([02a730c](https://github.com/CoCreate-app/CoCreate-vdom/commit/02a730c0661d694996ab5eb6b34fac4867ce8756))
+
 # [1.10.0](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.9.9...v1.10.0) (2023-11-19)
 
 
