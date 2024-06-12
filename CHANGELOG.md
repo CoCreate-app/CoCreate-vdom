@@ -1,3 +1,11 @@
+## [1.12.3](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.12.2...v1.12.3) (2024-06-12)
+
+
+### Bug Fixes
+
+* bump cocreate dependencies ([d4fb16d](https://github.com/CoCreate-app/CoCreate-vdom/commit/d4fb16d672bd72491014001a667c9b90b4b69cdb))
+* svg icon class ([1402045](https://github.com/CoCreate-app/CoCreate-vdom/commit/140204599570120a43b1f3a26e76a0fac2c8033f))
+
 ## [1.12.2](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.12.1...v1.12.2) (2024-04-29)
 
 
