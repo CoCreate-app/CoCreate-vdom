@@ -103,7 +103,7 @@ function createVirtualElement({ options, element }) {
             },
         },
     });
-    let arrow = createFAIcon({ name: "fa-arrows-alt" });
+    let arrow = createFAIcon({ name: "fa-arrows-up-down-left-right" });
 
     metadata.append(eye);
 
@@ -127,8 +127,10 @@ function createVirtualElement({ options, element }) {
 
 function createFAIcon({ name, event }) {
     let icon = document.createElement("i");
-    icon.classList.add("fa");
-    icon.classList.add(name);
+    name = name.replace('fa-', '')
+    icon.setAttribute('src', `../../assets/svg/${name}.svg`)
+    // icon.classList.add("fa");
+    // icon.classList.add(name);
 
     if (event) {
         let eventType = Object.keys(event)[0];
