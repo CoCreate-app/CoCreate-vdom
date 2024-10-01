@@ -102,3 +102,9 @@
 /*  font-family: Font Awesome\ 5 Free;*/
 /*  content: '\f070';*/
 /*}*/
+
+@media (prefers-color-scheme: dark) {
+    .vdom-item {
+        background-color: #222;
+    }
+}
