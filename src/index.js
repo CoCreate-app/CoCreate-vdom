@@ -147,7 +147,7 @@ initVdom();
 observer.init({
     name: 'CoCreateVdomAddedNodes',
     observe: ['addedNodes'],
-    target: '[vdom-selector]',
+    selector: '[vdom-selector]',
     callback(mutation) {
         initVdom();
     }
