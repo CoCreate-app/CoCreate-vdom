@@ -1,3 +1,19 @@
+# [1.13.0](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.12.3...v1.13.0) (2024-11-04)
+
+
+### Bug Fixes
+
+* formating ([5b27271](https://github.com/CoCreate-app/CoCreate-vdom/commit/5b27271c29bf2aebd38bb6dd8b7c6f5be814e270))
+* handle svg icons using src attribute ([b27bc59](https://github.com/CoCreate-app/CoCreate-vdom/commit/b27bc599b91fff9b6f46e840b22d5c497769dbe5))
+* observer taget has been renamed to selector ([34a77e9](https://github.com/CoCreate-app/CoCreate-vdom/commit/34a77e94b662e24be63605f78acfd74b25b07dc3))
+* pretier.config.js and file formating ([a3c9ac2](https://github.com/CoCreate-app/CoCreate-vdom/commit/a3c9ac24b3cbe0300b60f727cbea7352489986b0))
+
+
+### Features
+
+* add prettier.config.js and format files ([9599574](https://github.com/CoCreate-app/CoCreate-vdom/commit/9599574ce978fb6b8a189f528878f10e0e4e132c))
+* support system theme ([9a8924b](https://github.com/CoCreate-app/CoCreate-vdom/commit/9a8924baed3264f9f5e3a89bb592bacadd7deeb4))
+
 ## [1.12.3](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.12.2...v1.12.3) (2024-06-12)
 
 
