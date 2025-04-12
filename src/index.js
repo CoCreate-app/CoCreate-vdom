@@ -4,9 +4,9 @@ import "./index.css";
 let ignore = "#dropMarker, script";
 
 function initVdom() {
-	let virtualDom = document.querySelector("[vdom-selector]");
+	let virtualDom = document.querySelector("[vdom-query]");
 	if (!virtualDom) return;
-	let selector = virtualDom.getAttribute("vdom-selector");
+	let selector = virtualDom.getAttribute("vdom-query");
 	if (!selector) return;
 	let realDom = document.querySelector(selector);
 
@@ -113,7 +113,7 @@ function createVirtualElement({ options, element }) {
 
 		metadata.append(collapse);
 		down.setAttribute("toggle", "collapse");
-		down.setAttribute("toggle-closest", ".vdom-item");
+		down.setAttribute("toggle-query", "$closest .vdom-item");
 	}
 
 	metadata.append(text2);
@@ -144,7 +144,7 @@ initVdom();
 observer.init({
 	name: "CoCreateVdomAddedNodes",
 	types: ["addedNodes"],
-	selector: "[vdom-selector]",
+	selector: "[vdom-query]",
 	callback(mutation) {
 		initVdom();
 	}
@@ -153,7 +153,7 @@ observer.init({
 observer.init({
 	name: "CoCreateVdomAttributesNodes",
 	types: ["attributes"],
-	attributeFilter: ["vdom-selector"],
+	attributeFilter: ["vdom-query"],
 	callback(mutation) {
 		initVdom();
 	}

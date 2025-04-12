@@ -1,20 +1,19 @@
 window.addEventListener("load", () => {
-
-    window.parent.addEventListener("load", () => {
-        // initvdom
-        let vdomTargets = window.parent.document.querySelector(
-            "[vdom-selector]"
-        );
-        let vdomRealDom = window.parent.document.querySelector("[vdom-id]");
-        vdomRealDom = vdomRealDom.contentDocument.body.parentNode;
-        window.vdomInit({ realdom: vdomRealDom, virtualDomContainer: vdomTargets });
-    });
-
+	window.parent.addEventListener("load", () => {
+		// initvdom
+		let vdomTargets = window.parent.document.querySelector("[vdom-query]");
+		let vdomRealDom = window.parent.document.querySelector("[vdom-id]");
+		vdomRealDom = vdomRealDom.contentDocument.body.parentNode;
+		window.vdomInit({
+			realdom: vdomRealDom,
+			virtualDomContainer: vdomTargets
+		});
+	});
 });
 
 // window.addEventListener('load', () => {
 //   try {
-//     let vdomTargets = document.querySelector("[vdom-selector]");
+//     let vdomTargets = document.querySelector("[vdom-query]");
 //     let vdomRealDom = document.querySelector("[vdom-id]");
 //     vdomRealDom = vdomRealDom.contentDocument.body.parentNode;
 //     vdomTargets.innerText = "";

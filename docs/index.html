@@ -46,7 +46,7 @@
 			id="menuL"
 			class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px width:300px@xl"
 			resizable
-			resize-selector="[content_id='content']"
+			resize-query="[content_id='content']"
 			resize-property="margin-left"
 			resize-value="width">
 			<menu
@@ -75,7 +75,7 @@
 						share-width="700"
 						share-media="https://cdn.cocreate.app/docs/vdom.png"
 						hover="display:block!important"
-						hover-selector=".social-networks">
+						hover-query=".social-networks">
 						<div class="display:none social-networks">
 							<a
 								class="margin-right:15px"
@@ -124,11 +124,11 @@
 						class="border-bottom:1px_solid_lightgrey"
 						scroll
 						scroll-intersect="color:dodgerblue"
-						scroll-selector="#vdom-install-section">
+						scroll-query="#vdom-install-section">
 						<span
 							class="display:flex align-items:center width:fit-content"
 							hover="display:block!important"
-							hover-selector="[href='#vdom-install']">
+							hover-query="[href='#vdom-install']">
 							<h2 class="padding:5px_0px">Install</h2>
 							<a
 								class="margin-left:10px display:none"
@@ -148,11 +148,11 @@
 						class="margin-top:80px border-bottom:1px_solid_lightgrey"
 						scroll
 						scroll-intersect="color:dodgerblue"
-						scroll-selector="#vdom-usage-section">
+						scroll-query="#vdom-usage-section">
 						<span
 							class="display:flex align-items:center width:fit-content"
 							hover="display:block!important"
-							hover-selector="[href='#vdom-usage']">
+							hover-query="[href='#vdom-usage']">
 							<h2 class="padding:5px_0px">Usage</h2>
 							<a
 								class="margin-left:10px display:none"
@@ -181,11 +181,11 @@
 						class="margin-top:80px border-bottom:1px_solid_lightgrey"
 						scroll
 						scroll-intersect="color:dodgerblue"
-						scroll-selector="#vdom-attributes-section">
+						scroll-query="#vdom-attributes-section">
 						<span
 							class="display:flex align-items:center width:fit-content"
 							hover="display:block!important"
-							hover-selector="[href='#vdom-attributes']">
+							hover-query="[href='#vdom-attributes']">
 							<h2 class="padding:5px_0px">Attributes</h2>
 							<a
 								class="margin-left:10px display:none"
@@ -232,11 +232,11 @@
 						class="border-bottom:1px_solid_lightgrey"
 						scroll
 						scroll-intersect="color:dodgerblue"
-						scroll-selector="#vdom-demo-section">
+						scroll-query="#vdom-demo-section">
 						<span
 							class="display:flex align-items:center width:fit-content"
 							hover="display:block!important"
-							hover-selector="[href='#vdom-demo']">
+							hover-query="[href='#vdom-demo']">
 							<h2 class="padding:5px_0px">Demo</h2>
 							<a
 								class="margin-left:10px display:none"
@@ -263,7 +263,7 @@
 									key="demo"
 									save="false"
 									id="demo"
-									input-selector=".demopreview"
+									input-query=".demopreview"
 									input-attribute="value"
 									input-events="input, onload"
 									class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
@@ -286,7 +286,7 @@
 									show="#eye-slash"
 									hide="#eye, #demo-preview"
 									toggle="code-height"
-									toggle-selector="#demo-code"
+									toggle-query="#demo-code"
 									><i
 										class="height:18px"
 										src="/assets/svg/eye.svg"></i
@@ -298,7 +298,7 @@
 									show="#eye, #demo-preview"
 									hide="#eye-slash"
 									toggle="code-height"
-									toggle-selector="#demo-code"
+									toggle-query="#demo-code"
 									><i src="/assets/svg/eye-slash.svg"></i
 								></a>
 								<a
@@ -321,7 +321,7 @@
 								<a
 									class="margin-right:5px"
 									fullscreen
-									fullscreen-selector="#playground"></a>
+									fullscreen-query="#playground"></a>
 							</div>
 						</div>
 						<!-- End SandBox -->
