@@ -1,3 +1,13 @@
+## [1.13.2](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.13.1...v1.13.2) (2025-04-30)
+
+
+### Bug Fixes
+
+* added css-loader ([5adf054](https://github.com/CoCreate-app/CoCreate-vdom/commit/5adf054f06680a7132263467ba3ad56274e2143b))
+* update query attributes ([012e59e](https://github.com/CoCreate-app/CoCreate-vdom/commit/012e59e058faeb94145367a4f38f6e5de7c0b560))
+* updated cocreate modules versions ([4999cc1](https://github.com/CoCreate-app/CoCreate-vdom/commit/4999cc1781e8a247933a0edd9139e626111f13fd))
+* webpack.config and devdependencies ([e45afd7](https://github.com/CoCreate-app/CoCreate-vdom/commit/e45afd75f0ea8046eb7edaec15fa6a4a13f1c178))
+
 ## [1.13.1](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.13.0...v1.13.1) (2025-04-11)
 
 
