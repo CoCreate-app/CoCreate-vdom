@@ -1,3 +1,10 @@
+## [1.13.4](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.13.3...v1.13.4) (2026-02-04)
+
+
+### Bug Fixes
+
+* update worklow ([2f5294b](https://github.com/CoCreate-app/CoCreate-vdom/commit/2f5294be4e6eee139d67afdf445e78ffc51d60d8))
+
 ## [1.13.3](https://github.com/CoCreate-app/CoCreate-vdom/compare/v1.13.2...v1.13.3) (2025-05-01)
 
 
